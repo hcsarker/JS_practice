@@ -1,0 +1,18 @@
+body {
+    text-size-adjust: 14;
+    text-justify: auto;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+button {
+    border: none;
+    background-color: aliceblue;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+.title {
+    background-color: green;
+    color: white;
+    padding: 0.5rem;
+}
