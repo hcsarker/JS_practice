@@ -640,58 +640,8 @@ debouncedSearch("JavaScript"); // শুধুমাত্র শেষ ইন�
 
 
 /* ==============================================================================
-   PART 13: DOM ম্যানিপুলেশন এবং ইন্টারঅ্যাক্টিভ ইভেন্ট হ্যান্ডলার (Browser Environment)
+   PART 13: DOM ম্যানিপুলেশন এবং ইভেন্ট হ্যান্ডলার কনসেপ্টস
    ==============================================================================
-   - শুধুমাত্র ব্রাউজার পরিবেশে এই সেকশনটি রান হবে।
 */
-if (typeof window !== "undefined" && typeof document !== "undefined") {
-  console.log("\n--- [PART 13: DOM & EVENT HANDLING] ---");
-
-  // DOM এলিমেন্ট সিলেকশন
-  const titleElement = document.querySelector("#title");
-  if (titleElement) {
-    titleElement.textContent = "⚡ Master JavaScript (Basic to Advanced)";
-    titleElement.classList.add("title");
-  }
-
-  // ডাইনামিক বাটন এবং ইন্টারঅ্যাকশন
-  const allButtons = document.querySelectorAll(".btn");
-  allButtons.forEach((btn, index) => {
-    btn.textContent = `Action ${index + 1}`;
-    btn.addEventListener("click", (event) => {
-      console.log(`🖱️ Button ${index + 1} clicked! Element text: ${event.target.textContent}`);
-      alert(`You clicked: ${event.target.textContent}\nGreat job exploring DOM manipulation!`);
-    });
-  });
-
-  // ডাইনামিক নতুন এলিমেন্ট তৈরি করে পেজে যুক্ত করা (Create Element)
-  const appContainer = document.querySelector("#app-container") || document.body;
-  const demoCard = document.createElement("div");
-  demoCard.className = "learning-card";
-  demoCard.innerHTML = `
-    <div style="margin-top: 1.5rem; padding: 1rem; border: 1px solid #3b82f6; border-radius: 8px; background: #eff6ff;">
-      <h3 style="color: #1d4ed8; margin-top: 0;">🎉 Interactive DOM Demo Running</h3>
-      <p style="margin: 0.5rem 0; color: #1e293b;">
-        JavaScript ফাইলটি ব্রাউজারে সফলভাবে লোড হয়েছে। কনসোল (F12) ওপেন করে সমস্ত অধ্যায়ের রেজাল্ট দেখতে পারেন!
-      </p>
-      <input type="text" id="interactive-input" placeholder="Type something to test debounce..." style="padding: 0.5rem; width: 80%; border-radius: 4px; border: 1px solid #cbd5e1; margin-top: 0.5rem;" />
-      <p id="live-output" style="color: #64748b; font-size: 0.9rem; margin-top: 0.5rem;">Debounced output will appear here...</p>
-    </div>
-  `;
-  appContainer.appendChild(demoCard);
-
-  // লাইভ ইনপুট লিসেনার (Debounce Integration)
-  const inputEl = document.querySelector("#interactive-input");
-  const outputEl = document.querySelector("#live-output");
-  if (inputEl && outputEl) {
-    const updateOutput = debounce((val) => {
-      outputEl.textContent = val ? `✨ Filter query: "${val}"` : "Debounced output will appear here...";
-      outputEl.style.color = "#0f172a";
-      outputEl.style.fontWeight = "bold";
-    }, 400);
-
-    inputEl.addEventListener("input", (e) => {
-      updateOutput(e.target.value);
-    });
-  }
-}
+console.log("\n--- [PART 13: DOM & EVENT CONCEPTS] ---");
+console.log("DOM manipulation is managed cleanly via the interactive UI components in index.html & app.js.");

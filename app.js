@@ -18,6 +18,7 @@ const state = {
 
 // DOM References
 const appBody = document.querySelector(".app-body");
+const appContent = document.querySelector(".app-content");
 const sidebarNav = document.getElementById("sidebar-nav");
 const searchInput = document.getElementById("search-input");
 const categoryPillsContainer = document.getElementById("category-pills");
@@ -184,7 +185,11 @@ function loadTopic(topicId) {
   prevTopicBtn.disabled = currentIndex <= 0;
   nextTopicBtn.disabled = currentIndex >= tutorials.length - 1;
 
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  if (appContent) {
+    appContent.scrollTo({ top: 0, behavior: "smooth" });
+  } else {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
 }
 
 /**
