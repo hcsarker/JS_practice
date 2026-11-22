@@ -1,821 +1,697 @@
-// alert("Hello")
+/**
+ * ==============================================================================
+ * 🚀 COMPLETE JAVASCRIPT MASTERCLASS: BASIC TO ADVANCED (বাস্তবধর্মী হ্যান্ডস-অন গাইড)
+ * ==============================================================================
+ * লেখক / সংগ্রাহক: Hridoy Sarker
+ * উদ্দেশ্য: যে কেউ যেন শূন্য থেকে শুরু করে প্র্যাকটিক্যাল উদাহরণসহ জাভাস্ক্রিপ্ট
+ *          এর সমস্ত কোর কনসেপ্ট, ES6+, OOP, Async এবং DOM শিখতে পারে।
+ * 
+ * 📌 সূচিপত্র (Table of Contents):
+ * ------------------------------------------------------------------------------
+ * PART 01: জাভাস্ক্রিপ্ট বেসিক্স (Variables, Data Types, Type Conversion)
+ * PART 02: অপারেটর এবং কন্ট্রোল ফ্লো (Operators, If-Else, Switch, Ternary)
+ * PART 03: লুপ এবং ইটারেশন (for, while, do-while, for...of, for...in)
+ * PART 04: বিল্ট-ইন মেথড (Number, Math, String, Date)
+ * PART 05: ফাংশন ইন-ডেপথ (Declaration, Arrow, Callback, HOF, Rest/Default)
+ * PART 06: অ্যারে মাস্টারক্লাস (Mutating/Non-mutating, map, filter, reduce, sort)
+ * PART 07: অবজেক্ট এবং আধুনিক ES6+ ফিচার্স (Destructuring, Spread, Modules)
+ * PART 08: এরর হ্যান্ডলিং ও ডিবাগিং (try, catch, finally, custom throw)
+ * PART 09: JSON ও ব্রাউজার স্টোরেজ (JSON.stringify, localStorage)
+ * PART 10: অ্যাসিনক্রোনাস জাভাস্ক্রিপ্ট (Event Loop, Promise, Async/Await, Fetch API)
+ * PART 11: অবজেক্ট ওরিয়েন্টেড প্রোগ্রামিং - OOP (Class, Constructor, Inheritance, Bank App)
+ * PART 12: অ্যাডভান্সড কনসেপ্টস (Scope, Hoisting, Closures, this Keyword, Debounce)
+ * PART 13: DOM ম্যানিপুলেশন এবং ইভেন্ট হ্যান্ডলিং (Browser Interactive Demo)
+ * ==============================================================================
+ */
 
+// ------------------------------------------------------------------------------
+// 📦 ES MODULE IMPORTS (মডিউল ইম্পোর্ট)
+// ------------------------------------------------------------------------------
 import { addition, subs } from "./calculate.js";
 import { person3 } from "./person.js";
 import users from "./user.js";
 
-//arithmatic operator
-//(+, - ,*, /, %)
+console.log("%c🔥 JavaScript Mastery Guide Loaded Successfully!", "color: #22c55e; font-size: 16px; font-weight: bold;");
 
 
+/* ==============================================================================
+   PART 01: জাভাস্ক্রিপ্ট বেসিক্স (Variables & Data Types)
+   ==============================================================================
+   - var: Function scoped, re-declare করা যায়, hoisting সমস্যা তৈরি করে (ব্যবহার না করাই ভালো)।
+   - let: Block scoped, মান পরিবর্তন (re-assign) করা যায়।
+   - const: Block scoped, মান অপরিবর্তনশীল (constant), পরিবর্তন করা যায় না।
+*/
+console.log("\n--- [PART 01: VARIABLES & DATA TYPES] ---");
 
+// ১. ভেরিয়েবল ডিক্লেয়ারেশন
+let studentAge = 22;
+studentAge = 23; // Valid: let এর মান পরিবর্তন সম্ভব
 
+const institute = "PSTU";
+// institute = "DU"; // ❌ Error: Assignment to constant variable
 
-//assignment operator
-// (+=, -=, /=, *=, %=)
-console.log('assignment operator')
-let x = 5;
-let y = 3;
+// ২. ডাটা টাইপসমূহ (Primitive & Non-Primitive)
+const userName = "Yeash Sarker";         // String
+const userScore = 98.5;                  // Number
+const isPassed = true;                   // Boolean
+let unassignedJob;                       // Undefined (মান নির্ধারণ করা হয়নি)
+const emptyWallet = null;                // Null (ইচ্ছাকৃতভাবে খালি রাখা মান)
+const uniqueId = Symbol("id");           // Symbol (ইউনিক আইডেন্টিফায়ার)
+const bigNumber = 9007199254740991n;     // BigInt (অনেক বড় পূর্ণসংখ্যা)
 
-x += y;
-x -= y;
+console.log("Types:", {
+  name: typeof userName,
+  score: typeof userScore,
+  passed: typeof isPassed,
+  job: typeof unassignedJob,
+  wallet: typeof emptyWallet, // JS এর একটি পুরনো ত্রুটি: null কে 'object' দেখায়
+  id: typeof uniqueId,
+  big: typeof bigNumber
+});
 
-console.log(x);
-
-//Unary operator (-, +, ++, --)
-//pre , post  unary 
-console.log('\nUnary operator')
-let a = 5; 
-
-let b = ++a;
-
-b = a++;
-
-console.log(b);
-
-//conditional statement
-console.log('\nCondition')
-const num = 7;
-if (num % 2 == 0) {
-    console.log("Event");
-}
-else {
-    console.log("Odd");
-}
-
-//write a program that check a number is positive or negative or zero
-
-const n = 0;
-if (n > 0) {
-    console.log("positive");
-}
-else if (n < 0) {
-    console.log("Negative");
-}
-else {
-    console.log("Zero");
-}
-
-//logical & conditional 
-
-//vowel consonant
-console.log('\n\nlogical condition ')
-let letter = 'A';
-letter = letter.toLowerCase();
-if ( 
-    letter === 'a' ||
-    letter === 'e' ||
-    letter === 'i' ||
-    letter === 'o' ||
-    letter === 'u' 
-) {
-    console.log("Vowel");
-}
-else {
-    console.log("Consonant");
+// ৩. ট্রুথি (Truthy) বনাম ফলসি (Falsy) মান
+// জাভাস্ক্রিপ্টে ৬টি ফলসি মান: false, 0, "", null, undefined, NaN
+const testVal = "";
+if (testVal) {
+  console.log("This is Truthy");
+} else {
+  console.log("Empty string is Falsy!"); // এটি এক্সিকিউট হবে
 }
 
 
-//loop = for , while, do while
-console.log('\nPrinting using for loop')
-for (let i = 1; i<= 10; i++){
-    console.log(i);
+/* ==============================================================================
+   PART 02: অপারেটর এবং কন্ট্রোল ফ্লো (Operators & Control Flow)
+   ==============================================================================
+*/
+console.log("\n--- [PART 02: OPERATORS & CONDITIONALS] ---");
+
+// ১. অ্যারিথমেটিক অপারেটর (+, -, *, /, %, **)
+const a = 10;
+const b = 3;
+console.log(`Add: ${a + b}, Modulus (ভাগশেষ): ${a % b}, Exponent: ${a ** b}`);
+
+// ২. অ্যাসাইনমেন্ট ও ইউনারি অপারেটর
+let points = 50;
+points += 10; // points = points + 10 (60)
+let counter = 10;
+console.log("Pre-increment (++c):", ++counter); // ১১ (আগে বাড়বে)
+console.log("Post-increment (c++):", counter++); // ১১ (পরে বাড়বে)
+console.log("Current counter:", counter);        // ১২
+
+// ৩. কম্প্যারিজন (== বনাম ===)
+// == শুধু মান যাচাই করে (type coercion করে)
+// === মান এবং ডাটা টাইপ দুটিই কঠোরভাবে যাচাই করে (সবসময় === ব্যবহার করা উচিত)
+console.log("Loose Equal (5 == '5'):", 5 == "5");     // true
+console.log("Strict Equal (5 === '5'):", 5 === "5");   // false
+
+// ৪. কন্ডিশনাল স্টেটমেন্ট (if, else if, else)
+const testScore = 78;
+let grade = "";
+
+if (testScore >= 80) {
+  grade = "A+";
+} else if (testScore >= 70) {
+  grade = "A";
+} else if (testScore >= 60) {
+  grade = "B";
+} else {
+  grade = "Fail";
+}
+console.log(`Exam Score: ${testScore}, Obtained Grade: ${grade}`);
+
+// ৫. টার্নারি অপারেটর (Short Condition)
+const age = 20;
+const canVote = age >= 18 ? "Eligible to vote" : "Too young to vote";
+console.log("Voter Status:", canVote);
+
+// ৬. নালিশ কোলেসিং (??) এবং অপশনাল চেইনিং (?.)
+// ?? শুধুমাত্র null বা undefined থাকলে ডিফল্ট মান দেয় (0 বা "" কে নয়)
+const userResponse = 0;
+const finalScore = userResponse ?? 100; // 0 পাবে (ফলসি বিবেচনা করবে না)
+console.log("Nullish Coalescing Score:", finalScore);
+
+const customer = { profile: { address: { city: "Dhaka" } } };
+console.log("Optional Chaining City:", customer?.profile?.address?.city);
+console.log("Non-existing Property:", customer?.profile?.phone?.number); // undefined দেবে, ক্র্যাশ করবে না!
+
+// ৭. সুইচ কেস (Switch Statement - Menu Example)
+const dayNumber = 3;
+let dayName = "";
+
+switch (dayNumber) {
+  case 1:
+    dayName = "Sunday";
+    break;
+  case 2:
+    dayName = "Monday";
+    break;
+  case 3:
+    dayName = "Tuesday";
+    break;
+  default:
+    dayName = "Other day";
+}
+console.log(`Day ${dayNumber} is: ${dayName}`);
+
+
+/* ==============================================================================
+   PART 03: লুপ এবং ইটারেশন (Loops & Iterations)
+   ==============================================================================
+*/
+console.log("\n--- [PART 03: LOOPS] ---");
+
+// ১. For Loop
+console.log("For loop count:");
+let loopOutput = [];
+for (let i = 1; i <= 5; i++) {
+  loopOutput.push(i);
+}
+console.log(loopOutput.join(", "));
+
+// ২. While Loop & Do-While Loop
+let w = 1;
+while (w <= 3) {
+  // console.log(`While loop: ${w}`);
+  w++;
 }
 
-console.log('\n\nPrinting using while loop')
-let j = 1;
-while (j<= 10) {
-    console.log(j);
-    j++;
-}
-
-console.log('\n\nPrinting using do-while loop')
-let k = 1;
+let d = 5;
 do {
-    
-    console.log(k)
-    k++;
+  // শর্ত মিথ্যা হলেও কমপক্ষে ১ বার রান করবে
+  console.log("Do-While ran at least once, d =", d);
+  d++;
+} while (d < 5);
+
+// ৩. break এবং continue
+console.log("Loop with break and continue:");
+for (let i = 1; i <= 6; i++) {
+  if (i === 2) continue; // ২ স্কিপ করবে
+  if (i === 5) break;    // ৫ এ আসলে লুপ বন্ধ হয়ে যাবে
+  console.log(`Value: ${i}`);
 }
-while (k <= 10);
+
+// ৪. for...of (অ্যারে বা স্ট্রিং এর মানের উপর লুপ চালানোর জন্য)
+const techStack = ["JavaScript", "React", "Node.js", "MongoDB"];
+for (const tech of techStack) {
+  console.log(`- Tech: ${tech}`);
+}
+
+// ৫. for...in (অবজেক্টের কী বা প্রোপার্টির উপর লুপ চালানোর জন্য)
+const devProfile = { name: "Hridoy", role: "Full Stack Engineer", exp: "2 years" };
+for (const key in devProfile) {
+  console.log(`${key.toUpperCase()}: ${devProfile[key]}`);
+}
 
 
-//for of & for in
-console.log('\nfor of & for in')
-const countries = [
-    'Bnagladesh',
-    'India',
-    'Pakistan',
-    'Nepal',
-    'Bhutan'
+/* ==============================================================================
+   PART 04: বিল্ট-ইন মেথড (Number, Math, String, Date)
+   ==============================================================================
+*/
+console.log("\n--- [PART 04: BUILT-IN METHODS] ---");
+
+// ১. Number Methods
+const pi = 3.14159265;
+console.log("toFixed(2):", pi.toFixed(2));             // "3.14" (স্ট্রিং হিসেবে রিটার্ন করে)
+console.log("parseInt('42px'):", parseInt("42px"));     // 42
+console.log("parseFloat('12.5rem'):", parseFloat("12.5rem")); // 12.5
+console.log("isNaN('abc'):", isNaN("abc"));             // true
+
+// ২. Math Methods & Random Number Formula
+console.log("Math.round(4.7):", Math.round(4.7)); // 5
+console.log("Math.floor(4.9):", Math.floor(4.9)); // 4
+console.log("Math.ceil(4.1):", Math.ceil(4.1));   // 5
+console.log("Math.abs(-25):", Math.abs(-25));     // 25
+
+// বাস্তব উদাহরণ: নির্দিষ্ট সীমার (min থেকে max) মধ্যে Random Integer তৈরি
+const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+console.log("Random number between 10 and 20:", getRandomInt(10, 20));
+
+// ৩. String Methods
+const rawText = "   Learn JavaScript with Real Projects!   ";
+const cleanText = rawText.trim();
+console.log("Original Text Length:", rawText.length);
+console.log("Trimmed:", cleanText);
+console.log("Uppercase:", cleanText.toUpperCase());
+console.log("Includes 'JavaScript':", cleanText.includes("JavaScript"));
+console.log("Slice(6, 16):", cleanText.slice(6, 16));
+console.log("Replace:", cleanText.replace("Real", "Awesome"));
+console.log("Split into words:", cleanText.split(" "));
+
+// ৪. Date Methods
+const now = new Date();
+console.log(`Current Year: ${now.getFullYear()}, Month: ${now.getMonth() + 1}, Time: ${now.toLocaleTimeString()}`);
+
+
+/* ==============================================================================
+   PART 05: ফাংশন ইন-ডেপথ (Functions & Callbacks)
+   ==============================================================================
+*/
+console.log("\n--- [PART 05: FUNCTIONS DEEP-DIVE] ---");
+
+// ১. ট্র্যাডিশনাল ফাংশন ডিক্লেয়ারেশন
+function calculateDiscount(price, discountPercent = 10) {
+  // ডিফল্ট প্যারামিটার: discountPercent পাস না করলে ১০% নিবে
+  const discountAmount = (price * discountPercent) / 100;
+  return price - discountAmount;
+}
+console.log("Discounted Price ($100 with default 10%):", calculateDiscount(100));
+console.log("Discounted Price ($200 with 25%):", calculateDiscount(200, 25));
+
+// ২. অ্যারো ফাংশন (Arrow Function)
+const multiply = (x, y) => x * y;
+console.log("Arrow Multiply (6 * 7):", multiply(6, 7));
+
+// ৩. রেস্ট প্যারামিটার (...numbers)
+// অজানা সংখ্যক আর্গুমেন্ট গ্রহণ করে একটি অ্যারে বানায়
+const sumAll = (...numbers) => numbers.reduce((total, n) => total + n, 0);
+console.log("Sum of multiple numbers:", sumAll(5, 10, 15, 20, 25));
+
+// ৪. হায়ার-অর্ডার ফাংশন (Higher Order Function) এবং কলব্যাক ফাংশন (Callback)
+// HOF: যে ফাংশন অন্য কোনো ফাংশনকে প্যারামিটার হিসেবে গ্রহণ করে বা রিটার্ন করে।
+const performCalculation = (num1, num2, operationCallback) => {
+  return operationCallback(num1, num2);
+};
+
+const addOp = (x, y) => x + y;
+const subOp = (x, y) => x - y;
+const mulOp = (x, y) => x * y;
+
+console.log("Callback Calc (Addition):", performCalculation(15, 5, addOp));
+console.log("Callback Calc (Multiply):", performCalculation(15, 5, mulOp));
+
+
+/* ==============================================================================
+   PART 06: অ্যারে মাস্টারক্লাস (Arrays & Modern Array Methods)
+   ==============================================================================
+*/
+console.log("\n--- [PART 06: ARRAY MASTERY] ---");
+
+// ১. বেসিক অ্যারে অপারেশন
+const inventory = ["Laptop", "Keyboard", "Mouse"];
+inventory.push("Monitor");    // শেষে যুক্ত করে
+inventory.unshift("Desk");    // শুরুতে যুক্ত করে
+console.log("Inventory after additions:", inventory);
+inventory.pop();              // শেষেরটি বাদ দেয়
+inventory.shift();            // শুরুরটি বাদ দেয়
+console.log("Inventory after removals:", inventory);
+
+// ২. slice বনাম splice
+// slice: মূল অ্যারে পরিবর্তন করে না (immutability রক্ষা করে)
+const slicedItems = inventory.slice(0, 2);
+console.log("Sliced Items (safe):", slicedItems);
+
+// splice: মূল অ্যারে সরাসরি পরিবর্তন (mutate) করে
+inventory.splice(1, 1, "Mechanical Keyboard"); // ইনডেক্স ১ এর উপাদান বদলে নতুন উপাদান বসায়
+console.log("Inventory after splice:", inventory);
+
+// ৩. রিয়েল-ওয়ার্ল্ড ই-কমার্স প্রোডাক্ট ডেটাসেট
+const ecomProducts = [
+  { id: 1, name: "Apple iPhone 15 Pro", category: "Mobile", price: 1200, rating: 4.8, inStock: true, date: "2024-01-15" },
+  { id: 2, name: "Samsung Galaxy S24 Ultra", category: "Mobile", price: 1100, rating: 4.7, inStock: true, date: "2024-02-10" },
+  { id: 3, name: "Sony WH-1000XM5 Headphone", category: "Audio", price: 380, rating: 4.9, inStock: false, date: "2023-11-05" },
+  { id: 4, name: "MacBook Pro M3", category: "Laptop", price: 2000, rating: 4.9, inStock: true, date: "2024-03-01" },
+  { id: 5, name: "Logitech MX Master 3S", category: "Accessories", price: 99, rating: 4.6, inStock: true, date: "2023-10-20" },
+  { id: 6, name: "Dell UltraSharp 27 Monitor", category: "Accessories", price: 450, rating: 4.5, inStock: false, date: "2023-12-12" },
 ];
 
-for (let country of countries) {
-    console.log(country);
-    
-}
+// ৪. map() - রূপান্তর (Transformation): নতুন অ্যারে রিটার্ন করে
+const productSummaries = ecomProducts.map(p => `${p.name} - $${p.price}`);
+console.log("Product Summaries (map):", productSummaries);
+
+// ৫. filter() - নির্দিষ্ট শর্তে ফিল্টার করা
+const inStockAffordableProducts = ecomProducts.filter(p => p.inStock && p.price <= 1200);
+console.log("In Stock & <= $1200 (filter):", inStockAffordableProducts.map(p => p.name));
+
+// ৬. find() এবং findIndex()
+const headphone = ecomProducts.find(p => p.category === "Audio");
+console.log("Found Audio Product (find):", headphone?.name);
+const macbookIndex = ecomProducts.findIndex(p => p.name.includes("MacBook"));
+console.log("MacBook Index in Array:", macbookIndex);
+
+// ৭. reduce() - হিসাব ও এগ্রিগেশন (সব পণ্যের মোট মূল্য বের করা)
+const totalInventoryValue = ecomProducts.reduce((sum, item) => sum + item.price, 0);
+console.log(`Total Inventory Value: $${totalInventoryValue}`);
+
+// ৮. some() এবং every()
+const hasExpensiveItem = ecomProducts.some(p => p.price > 1500); // যেকোনো একটি শর্ত পূরণ করলেই true
+console.log("Is there any item over $1500? (some):", hasExpensiveItem);
+
+const allInStock = ecomProducts.every(p => p.inStock); // প্রতিটি আইটেম শর্ত পূরণ করলে তবেই true
+console.log("Are all items in stock? (every):", allInStock);
+
+// ৯. sort() - সঠিকভাবে সর্টিং করা (Number, String, Date)
+// Note: sort মূল অ্যারেকে mutate করে, তাই কপি করে([...array]) সর্ট করা বেস্ট প্র্যাকটিস
+const sortedByPriceAsc = [...ecomProducts].sort((a, b) => a.price - b.price);
+console.log("Cheapest Product:", sortedByPriceAsc[0].name, `($${sortedByPriceAsc[0].price})`);
+
+const sortedByName = [...ecomProducts].sort((a, b) => a.name.localeCompare(b.name));
+console.log("Alphabetical First Product:", sortedByName[0].name);
 
 
-const person = {
-    name: 'Hridoy Sarker',
-    age: 23,
-    address: 'PSTU',
-    sub: 'CSE',
-    country: 'Bangladesh'
+/* ==============================================================================
+   PART 07: অবজেক্ট এবং আধুনিক ES6+ ফিচার্স (Objects & Modern ES6+)
+   ==============================================================================
+*/
+console.log("\n--- [PART 07: OBJECTS & MODERN ES6+] ---");
 
+const developer = {
+  id: 101,
+  name: "Hridoy",
+  title: "Software Engineer",
+  skills: ["JavaScript", "TypeScript", "React", "Node.js"],
+  contact: {
+    email: "hridoy@example.com",
+    city: "Patuakhali",
+    country: "Bangladesh"
+  },
+  introduce() {
+    return `Hi, I am ${this.name}, working as a ${this.title}.`;
+  }
 };
 
-for (const key in person) {
-    console.log(person[key]);
+console.log(developer.introduce());
+
+// ১. অবজেক্ট ডিস্ট্রাকচারিং (Destructuring with Renaming & Default Values)
+const { name: devName, title, contact: { city }, salary = 50000 } = developer;
+console.log(`Destructured -> Name: ${devName}, Title: ${title}, City: ${city}, Salary: ${salary}`);
+
+// ২. অ্যারে ডিস্ট্রাকচারিং
+const rgbColors = ["#ff0000", "#00ff00", "#0000ff"];
+const [red, green, blue] = rgbColors;
+console.log("Destructured Colors:", red, green, blue);
+
+// ৩. স্প্রেড অপারেটর (...) - অবজেক্ট ও অ্যারে ক্লোন ও মার্জ
+const originalArr = [1, 2, 3];
+const mergedArr = [...originalArr, 4, 5, 6];
+console.log("Merged Array with Spread:", mergedArr);
+
+const updatedDev = { ...developer, title: "Senior Software Engineer", status: "Active" };
+console.log("Updated Developer Title:", updatedDev.title);
+
+// ৪. Object Methods: keys, values, entries
+console.log("Object Keys:", Object.keys(developer.contact));
+console.log("Object Values:", Object.values(developer.contact));
+
+// ৫. মডিউল টেস্টিং (বাইরের ফাইল থেকে আনা কোড)
+console.log("External Module Addition (calculate.js):", addition(25, 75));
+console.log("External Module Subs (calculate.js):", subs(50, 15));
+console.log("External Person Info (person.js):", person3.name, person3.nationality);
+console.log("External Users Data (user.js):", users.length, "users loaded");
+
+
+/* ==============================================================================
+   PART 08: এরর হ্যান্ডলিং ও ডিবাগিং (Error Handling)
+   ==============================================================================
+*/
+console.log("\n--- [PART 08: ERROR HANDLING] ---");
+
+function processPayment(amount, userBalance) {
+  if (typeof amount !== "number" || amount <= 0) {
+    throw new Error("Invalid payment amount. Amount must be a positive number.");
+  }
+  if (amount > userBalance) {
+    throw new Error("Insufficient balance for this transaction!");
+  }
+  return { success: true, remainingBalance: userBalance - amount };
+}
+
+try {
+  console.log("Trying valid payment...");
+  const receipt = processPayment(150, 500);
+  console.log("Payment successful! Remaining:", receipt.remainingBalance);
+
+  console.log("Trying invalid payment (exceeding balance)...");
+  processPayment(800, 500); // এটি Error throw করবে
+} catch (error) {
+  console.error("Catch Block Caught Error:", error.message);
+} finally {
+  console.log("Finally Block: Transaction attempt completed (Runs always).");
 }
 
 
-//  function
-console.log('\n\nfunction ')
+/* ==============================================================================
+   PART 09: JSON ও ব্রাউজার স্টোরেজ (JSON & Web Storage)
+   ==============================================================================
+*/
+console.log("\n--- [PART 09: JSON & LOCALSTORAGE] ---");
 
-function greeting(message){ 
-    console.log(`Hello!, ${message}`);
-}
-
-greeting("Good morning.");
-greeting("Afternoon");
-greeting("Evening");
-
-// simple calculator
-
-function addNumber(n1, n2) {
-    let result = n1 + n2;
-    console.log(`${n1} + ${n2} = ${result}`);
-}
-
-function SubNumber(n1, n2) {
-    let result = n1 - n2;
-    console.log(`${n1} - ${n2} = ${result}`);
-}
-
-function mulNumber(n1, n2) {
-    let result = n1 * n2;
-    console.log(`${n1} * ${n2} = ${result}`);
-}
-
-
-addNumber(14, 3);
-SubNumber(10, 5);
-mulNumber(5, 4);
-
-
-// tranditional function vs arrow function
-
-function display(message) {
-    return `Hello, ${message}`;
-}
-
-
-const display1 = (message) =>  `Hello, ${message}` //arrow 
-
-
-console.log(display(" world1"));
-console.log(display1(" world2"));
-
-// simple calculator
-
-console.log("\n\nSimple calculator");
-
-const addNumber1 = (num1, num2) => num1 + num2;
-const subNumber1 = (num1, num2) => num1 - num2; 
-const mulNumber1 = (num1, num2) => num1 * num2;
-const divNumber1 = (num1, num2) => num1 / num2; 
-
-
-console.log(addNumber1(10, 20));
-console.log(subNumber1(10, 20));
-console.log(mulNumber1(10, 20));
-console.log(divNumber1(10, 20));
-
-// using object 
-console.log('\nusing Object');
-
-const Calculator = {
-    add: (num1, num2) => num1 + num2,
-    sub: (num1, num2) => num1 - num2,
-    mul: (num1, num2) => num1 * num2,
-    div: (num1, num2) => num1 / num2,
+const sessionUser = {
+  username: "yeash_dev",
+  theme: "dark",
+  lastLogin: new Date().toISOString()
 };
 
-console.log(Calculator.add(20, 30));
-console.log(Calculator.sub(30, 10));
-console.log(Calculator.mul(20, 2));
-console.log(Calculator.div(30, 3));
+// ১. JSON Serialization
+const jsonString = JSON.stringify(sessionUser);
+console.log("Serialized JSON String:", jsonString);
+
+// ২. JSON Parsing
+const parsedUser = JSON.parse(jsonString);
+console.log("Parsed Back into Object:", parsedUser.username);
+
+// ৩. LocalStorage হ্যান্ডলিং (Node.js এ রান করলে যেন ক্র্যাশ না করে সে জন্য সেফগার্ড)
+if (typeof localStorage !== "undefined") {
+  try {
+    localStorage.setItem("app_user", JSON.stringify(sessionUser));
+    const savedUser = JSON.parse(localStorage.getItem("app_user"));
+    console.log("Retrieved from LocalStorage:", savedUser?.username);
+  } catch (e) {
+    console.warn("LocalStorage access limited:", e.message);
+  }
+} else {
+  console.log("Note: localStorage is available in browser environment.");
+}
 
 
-//buildin function
-//number method
-const m = 12.3456;
+/* ==============================================================================
+   PART 10: অ্যাসিনক্রোনাস জাভাস্ক্রিপ্ট (Async JS, Promises, Async/Await)
+   ==============================================================================
+   - জাভাস্ক্রিপ্ট Single Threaded হওয়া সত্ত্বেও Event Loop এর মাধ্যমে Asynchronous কাজ করে।
+*/
+console.log("\n--- [PART 10: ASYNCHRONOUS JAVASCRIPT] ---");
 
-console.log(m.toFixed(3));
-console.log(m.toPrecision(4));
-console.log(m.toString());
-console.log(m.toString(2));
-console.log(typeof(m.toString()))
-//parseInt()
-//parsefloat()
+// ১. প্রমিজ (Promise) তৈরি ও ব্যবহার
+const simulateFetchUserData = (userId) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (userId > 0) {
+        resolve({ id: userId, username: "dev_hridoy", role: "Fullstack" });
+      } else {
+        reject(new Error("Invalid User ID provided"));
+      }
+    }, 500); // 500ms বিলম্ব
+  });
+};
 
+// ২. Async / Await ব্যবহার (সবচেয়ে আধুনিক ও ক্লিন অ্যাপ্রোচ)
+async function fetchAndDisplayUser() {
+  try {
+    console.log("⏳ Fetching user data asynchronously...");
+    const userData = await simulateFetchUserData(101);
+    console.log("✅ User Fetched Successfully:", userData);
+  } catch (err) {
+    console.error("❌ Failed to fetch user:", err.message);
+  }
+}
+fetchAndDisplayUser();
 
-//math method
-console.log(Math.abs(-34));
-console.log(Math.round(3.45));
-
-//random number
-const randomNumber = Math.floor(Math.random()*5);
-console.log(randomNumber);
-
-//date method
-const date = new Date();
-
-console.log(date.getFullYear());
-console.log(date.toLocaleTimeString());
-
-
-//! Array related Mehtod
-
-const printArray = (items) => {
-    for (const item of items) {
-        console.log(item);
+// ৩. বাস্তব API কল উদাহরণ (Fetch API with JSONPlaceholder)
+// নিরাপদভাবে কল করা হয়েছে যাতে ব্রাউজার বা নেটওয়ার্ক সমর্থিত পরিবেশে সরাসরি ডেটা আনে
+async function fetchSampleTodos() {
+  if (typeof fetch === "function") {
+    try {
+      const response = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+      if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
+      const todo = await response.json();
+      console.log("🌐 Real API Fetch Sample (jsonplaceholder):", todo.title);
+    } catch (apiError) {
+      console.log("Note: API call test finished (offline or restricted sandbox):", apiError.message);
     }
+  }
 }
-
-const fruits = ['apple', 'orange', 'mango', 'banana'];
-
-fruits.push('cherry', 'strawberry');
-
-printArray(fruits);
-
-//push = unshift
-//pop = shift
+fetchSampleTodos();
 
 
-//slice
+/* ==============================================================================
+   PART 11: অবজেক্ট ওরিয়েন্টেড প্রোগ্রামিং - OOP (ES6 Classes & Practical App)
+   ==============================================================================
+*/
+console.log("\n--- [PART 11: OBJECT ORIENTED PROGRAMMING - OOP] ---");
 
-const country = ['Australia', 'Bangladesh', 'Nepal', 'India'];
+/**
+ * 🏦 প্র্যাকটিক্যাল প্রজেক্ট: BankAccount ক্লাস (ইনক্যাপসুলেশন, প্রাইভেট ফিল্ডসহ)
+ */
+class BankAccount {
+  // Private field (#): ক্লাসের বাইরে থেকে সরাসরি পরিবর্তন রোধ করে (Encapsulation)
+  #balance;
+  #transactions;
 
-const sliced = country.slice(1, 3);
-printArray(sliced);
-
-//splice
-// country.splice(2);
-// printArray(country);
-
-console.log('\nafter splice');
-country.splice(2, 1, 'Chin', 'Japan');
-printArray(country);
-
-//string related
-console.log('\n\nString');
-
-const text =' hello World ';
-
-console.log(text.length);
-console.log(text.charAt(1));
-console.log(text.indexOf('hello'));
-console.log(text.lastIndexOf('o'));
-console.log(text.slice(2, 4));
-console.log(text.toLowerCase());
-console.log(text.toUpperCase());
-console.log(text.trim());
-
-
-//module 
-
-console.log(addition(10, 5));
-console.log(subs(10, 5));
-console.log(person3.name);
-console.log(person3.nationality);
-console.log(person3.printInfo());
-
-
-//spread operator
-
-const oddArray = [12, 13, 15, 34];
-const newArray = [...oddArray, 65, 45, 34, 46];
-console.log(newArray);
-
-
-//rest parameter
-
-const addNumber2 = (...numbers) => {
-    let sum = 0;
-    for (const number of numbers) {
-        sum += number;
+  constructor(accountHolder, initialDeposit = 0) {
+    this.accountHolder = accountHolder;
+    this.#balance = initialDeposit;
+    this.#transactions = [];
+    if (initialDeposit > 0) {
+      this.#transactions.push({ type: "DEPOSIT", amount: initialDeposit, date: new Date() });
     }
-    return sum;
+  }
+
+  // Getter: ব্যালেন্স নিরাপদে চেক করার জন্য
+  get balance() {
+    return this.#balance;
+  }
+
+  // টাকা জমা দেওয়ার মেথড
+  deposit(amount) {
+    if (amount <= 0) {
+      console.log("❌ Deposit amount must be positive!");
+      return;
+    }
+    this.#balance += amount;
+    this.#transactions.push({ type: "DEPOSIT", amount, date: new Date() });
+    console.log(`✅ Deposited $${amount}. Current Balance: $${this.#balance}`);
+  }
+
+  // টাকা তোলার মেথড
+  withdraw(amount) {
+    if (amount <= 0) {
+      console.log("❌ Withdrawal amount must be positive!");
+      return;
+    }
+    if (amount > this.#balance) {
+      console.log(`❌ Insufficient funds! You requested $${amount}, but balance is $${this.#balance}`);
+      return;
+    }
+    this.#balance -= amount;
+    this.#transactions.push({ type: "WITHDRAWAL", amount, date: new Date() });
+    console.log(`✅ Withdrawn $${amount}. Remaining Balance: $${this.#balance}`);
+  }
+
+  // স্টেটমেন্ট প্রিন্ট
+  printStatement() {
+    console.log(`--- Account Statement for: ${this.accountHolder} ---`);
+    console.log(`Total Transactions: ${this.#transactions.length}`);
+    console.log(`Net Balance: $${this.#balance}`);
+  }
 }
 
-console.log(addNumber2(10, 20));
-console.log(addNumber2(10, 20, 30, 40, 50));
+// ইনহেরিট্যান্স (Inheritance): SavingsAccount তৈরি
+class SavingsAccount extends BankAccount {
+  constructor(accountHolder, initialDeposit, interestRate = 5) {
+    super(accountHolder, initialDeposit); // প্যারেন্ট ক্লাসের কনস্ট্রাক্টর কল
+    this.interestRate = interestRate;
+  }
 
-//destructure
+  applyAnnualInterest() {
+    const interest = (this.balance * this.interestRate) / 100;
+    console.log(`📈 Applying ${this.interestRate}% interest: +$${interest}`);
+    this.deposit(interest);
+  }
+}
 
-const oldPerson = {
-    name: "Yeash sarker",
-    age: 23,
-    language: {
-        native: "Bangla",
-        second: 'Hindi',
-        third: 'English'
-    },
+// টেস্ট রান
+const myAccount = new SavingsAccount("Hridoy Sarker", 1000, 7.5);
+myAccount.deposit(500);
+myAccount.withdraw(200);
+myAccount.applyAnnualInterest();
+myAccount.printStatement();
 
+
+/* ==============================================================================
+   PART 12: অ্যাডভান্সড কনসেপ্টস (Closures, Scope, Hoisting, Debouncing)
+   ==============================================================================
+*/
+console.log("\n--- [PART 12: ADVANCED JAVASCRIPT CONCEPTS] ---");
+
+// ১. ক্লোজার (Closure): ভেতরের ফাংশন বাইরের ফাংশনের স্কোপের ভেরিয়েবল মনে রাখে
+function createCounter(initialValue = 0) {
+  let count = initialValue; // প্রাইভেট স্টেট
+  return {
+    increment: () => ++count,
+    decrement: () => --count,
+    getValue: () => count
+  };
+}
+
+const counterA = createCounter(10);
+console.log("Closure Counter +1:", counterA.increment()); // 11
+console.log("Closure Counter +1:", counterA.increment()); // 12
+console.log("Closure Counter -1:", counterA.decrement()); // 11
+
+// ২. ডিবাইউন্স ফাংশন (Debounce) - ইন্টারভিউ এবং প্র্যাকটিক্যাল সার্চ ইনপুটের জন্য অত্যন্ত গুরুত্বপূর্ণ
+// দ্রুত বারবার ইভেন্ট ট্রিগার হওয়া রোধ করে নির্দিষ্ট সময় পর একবার এক্সিকিউট করে
+function debounce(func, delay = 300) {
+  let timerId;
+  return function (...args) {
+    clearTimeout(timerId);
+    timerId = setTimeout(() => {
+      func.apply(this, args);
+    }, delay);
+  };
+}
+
+const handleSearch = (searchTerm) => {
+  console.log(`🔍 [Debounced Search Query API Called]: "${searchTerm}"`);
 };
-
-const { language: lg, age, name } = oldPerson; //destructure
-
-console.log(age);
-console.log(name);
-console.log(lg.native);
-
-//array 
-
-let arr = [1, 2, 3, 4];
-let arr1 = [5, 6, 7, 8];
-console.log(arr.indexOf(3));
-
-let arr2 = arr.concat(arr1);
-console.log(arr2);
+const debouncedSearch = debounce(handleSearch, 300);
+// টাইপিং সিমুলেশন:
+debouncedSearch("Ja");
+debouncedSearch("Java");
+debouncedSearch("JavaScript"); // শুধুমাত্র শেষ ইনপুটটি ৩০০ms পর কল হবে
 
 
-//default value
+/* ==============================================================================
+   PART 13: DOM ম্যানিপুলেশন এবং ইন্টারঅ্যাক্টিভ ইভেন্ট হ্যান্ডলার (Browser Environment)
+   ==============================================================================
+   - শুধুমাত্র ব্রাউজার পরিবেশে এই সেকশনটি রান হবে।
+*/
+if (typeof window !== "undefined" && typeof document !== "undefined") {
+  console.log("\n--- [PART 13: DOM & EVENT HANDLING] ---");
 
-const greet = (msg ='Good day!') => {
+  // DOM এলিমেন্ট সিলেকশন
+  const titleElement = document.querySelector("#title");
+  if (titleElement) {
+    titleElement.textContent = "⚡ Master JavaScript (Basic to Advanced)";
+    titleElement.classList.add("title");
+  }
 
-    console.log(msg);
+  // ডাইনামিক বাটন এবং ইন্টারঅ্যাকশন
+  const allButtons = document.querySelectorAll(".btn");
+  allButtons.forEach((btn, index) => {
+    btn.textContent = `Action ${index + 1}`;
+    btn.addEventListener("click", (event) => {
+      console.log(`🖱️ Button ${index + 1} clicked! Element text: ${event.target.textContent}`);
+      alert(`You clicked: ${event.target.textContent}\nGreat job exploring DOM manipulation!`);
+    });
+  });
 
+  // ডাইনামিক নতুন এলিমেন্ট তৈরি করে পেজে যুক্ত করা (Create Element)
+  const appContainer = document.querySelector("#app-container") || document.body;
+  const demoCard = document.createElement("div");
+  demoCard.className = "learning-card";
+  demoCard.innerHTML = `
+    <div style="margin-top: 1.5rem; padding: 1rem; border: 1px solid #3b82f6; border-radius: 8px; background: #eff6ff;">
+      <h3 style="color: #1d4ed8; margin-top: 0;">🎉 Interactive DOM Demo Running</h3>
+      <p style="margin: 0.5rem 0; color: #1e293b;">
+        JavaScript ফাইলটি ব্রাউজারে সফলভাবে লোড হয়েছে। কনসোল (F12) ওপেন করে সমস্ত অধ্যায়ের রেজাল্ট দেখতে পারেন!
+      </p>
+      <input type="text" id="interactive-input" placeholder="Type something to test debounce..." style="padding: 0.5rem; width: 80%; border-radius: 4px; border: 1px solid #cbd5e1; margin-top: 0.5rem;" />
+      <p id="live-output" style="color: #64748b; font-size: 0.9rem; margin-top: 0.5rem;">Debounced output will appear here...</p>
+    </div>
+  `;
+  appContainer.appendChild(demoCard);
+
+  // লাইভ ইনপুট লিসেনার (Debounce Integration)
+  const inputEl = document.querySelector("#interactive-input");
+  const outputEl = document.querySelector("#live-output");
+  if (inputEl && outputEl) {
+    const updateOutput = debounce((val) => {
+      outputEl.textContent = val ? `✨ Filter query: "${val}"` : "Debounced output will appear here...";
+      outputEl.style.color = "#0f172a";
+      outputEl.style.fontWeight = "bold";
+    }, 400);
+
+    inputEl.addEventListener("input", (e) => {
+      updateOutput(e.target.value);
+    });
+  }
 }
-
-greet('Good morning');
-greet('Good evening');
-greet('Good night');
-greet();
-
-// default import
-console.log(users);
-
-//? Higher order function => calculate
-//? callback function => operation
-
-const calculate = (n1, n2, operation) => {
-    return operation(n1, n2);
-}
-
-const add2 = (n1, n2) => {
-    return n1 + n2;
-};
-
-const sub2 = (n1, n2) => {
-    return n1 - n2;
-};
-const multi2 = (n1, n2) => {
-    return n1 * n2;
-};
-const divi2 = (n1, n2) => {
-    return n1 / n2;
-};
-
-let res = calculate(5, 4, add2);
-console.log(res);
-
-res = calculate(4, 2, sub2);
-console.log(res);
-
-// TODO - Higher order build-in function: foreach
-
-// const persons = ['Ali', 'Amit', 'Trrino', 'Roud', 'Hridoy'];
-
-// persons.forEach((manus, i) => {
-//     console.log(`${i}: ${manus}`);
-// });
-
-const squre = [1, 2, 3, 4, 5];
-const squrenum = [];
-squre.forEach((number) => {
-    squrenum.push(number * number);
-});
-console.log(squrenum);
-
-//
-
-// TODO - Higher order build-in function: map
-
-const squre1 = [1, 2, 3, 4, 5];
-const squrenum1 = squre1.map((number) => number * number );
-console.log(squrenum);
-
-//map- example
-const products = [
-    { id: 1, name: 'apple iphone 17', price: 160000 },
-    { id: 2, name: 'apple iphone 14', price: 140000 },
-    { id: 3, name: 'vivo y20 ', price: 60000 },
-    { id: 4, name: 'samsung galaxy s21', price: 40000 },
-    { id: 5, name: 'realme rwe34', price: 3000 },
-];
-
-products.map((product, i) => {
-    console.log(`\n\nProduct card: ${i+1}`);
-    console.log(`ID: ${product.id}`);
-    console.log(`name: ${product.name}`);
-    console.log(`Price: ${product.price}`);
-});
-
-
-// TODO - Higher order build-in function: filter
-
-const product1 = [
-    { id: 1, name: 'apple iphone 17', price: 3000, createdAt: new Date('2023-09-25') },
-    { id: 2, name: 'apple iphone 14', price: 1200, createdAt: new Date('2023-06-25')  },
-    { id: 3, name: 'vivo y20 ', price: 2000 , createdAt: new Date('2023-07-15') },
-    { id: 4, name: 'samsung galaxy s21', price: 1400 , createdAt: new Date('2023-08-15')},
-    { id: 5, name: 'realme rwe34', price: 3000, createdAt: new Date('2023-04-15')  },
-    { id: 6, name: 'apple watch 17', price: 1000, createdAt: new Date('2023-01-15')  },
-    { id: 7, name: 'samsung watch 14', price: 1500 , createdAt: new Date('2023-05-15') },
-    { id: 8, name: 'vivo y20 ', price: 1900 , createdAt: new Date('2023-03-15') },
-    { id: 9, name: 'samsung tv ', price: 800 , createdAt: new Date('2023-02-15') },
-    { id: 10, name: 'realme rwe34', price: 1700 , createdAt: new Date('2023-07-23') },
-];
-
-//!return the items price is greater than 1500
-
-const filterproduct = product1.filter((product) => {
-    return product.price > 1500;
-});
-
-console.log(filterproduct);
-
-//! filter + map usecase:
-
-const filteredNames = product1.filter((product) => product.price >= 1300 && product.price <= 2000).map((x)=> x.name);
-
-console.log(filteredNames);
-
-//! Search a product by using filter
-
-// const searchProducts = product1.filter((product) => product.name == "apple iphone 17");
-// console.log(searchProducts);
-
-// const searchProducts = product1.filter((product) => product.name.includes('apple'));
-// console.log(searchProducts);
-
-const searchProducts = (searchValue) => {
-   return product1.filter((product) => product.name.toLowerCase().includes(searchValue.toLowerCase()));
-}
-console.log(searchProducts("Apple"));
-
-
-// TODO - Higher order build-in function: reduce
-
-const cardProducts = [
-    { id: 1, name: 'apple iphone 17', price: 160000 },
-    { id: 2, name: 'apple iphone 14', price: 140000 },
-];
-
-//!using for loop
-// let totalPrice = 0;
-// for (let index = 0; index < cardProducts.length; index++) {
-//     totalPrice += cardProducts[index].price;
-// };
-
-// console.log(`You have to pay : ${totalPrice}`);
-
-//? Using forEach 
-
-// let totalPrice = 0;
-// cardProducts.forEach((cardItem) => totalPrice += cardItem.price);
-    
-// console.log(`You have to pay : ${totalPrice}`);
-
-//! Using reduce 
-
-const totalPrice = cardProducts
-    .map((cardItem)=> cardItem.price)
-    .reduce((accumulator, currentPrice) => accumulator + currentPrice, 0);
-
-console.log(`You have to pay total: ${totalPrice}`);
-
-
-// TODO - Higher order build-in function: some
-//best practice : variable name should start with has
-//atleast one item price >  15500
-const hasPrice = cardProducts.some((cardProduct) => cardProduct.price > 15500);
-console.log(`atleast one item price >  15500: ${hasPrice}`);
-
-// TODO - Higher order build-in function: every
-
-const allPrice = cardProducts.every((cardProduct) => cardProduct.price > 15500);
-console.log(`all item price >  15500: ${allPrice}`);
-
-// TODO - Higher order build-in function: sort
-//!sort by Price
-
-const productsSortByPrice = product1.sort((a, b) => {
-    return a.price - b.price; //ascending
-  //  return b.price - a.price; //descending
-});
-console.log(productsSortByPrice);
-
-//! sort by name
-const productsSortByName = product1.sort((a, b) => {
-    return a.name.localeCompare(b.name);
-     
-});
-console.log(productsSortByName);
-
-//! Sort by Date
-const productsSortByDate = product1.sort((a, b) => {
-    return new Date(a.createdAt)- new Date(b.createdAt);
-     
-});
-console.log(productsSortByDate);
-
-//! Create menu for sorting using switch case
-
-//prints products
-const printProducts = (product1) => {
-    console.log(JSON.stringify(product1, null, 2));
-}
-
-const menu = `
-1. Sort By Name (A-Z)
-2. Sort By Name (Z-A)
-3. Sort By Price (Low to High)
-4. Sort By Price (High to Low)
-5. Sort By Date (Old to New)
-6. Sort By Date (New to Old)
-
-`;
-
-const choise = '1';
-let sortedProducts = [...product1];
-
-switch (choise) {
-    case '1':
-        sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
-        printProducts(sortedProducts);
-        break;
-    case '2':
-        sortedProducts.sort((a, b) => b.name.localeCompare(a.name));
-        printProducts(sortedProducts);
-        break;
-    case '3':
-        sortedProducts.sort((a, b) => a.price - b.price);
-        printProducts(sortedProducts);
-        break;
-    case '4':
-        sortedProducts.sort((a, b) => b.price - a.price);
-        printProducts(sortedProducts);
-        break;
-    case '5':
-        sortedProducts.sort((a, b) => a.createdAt - b.createdAt);
-        printProducts(sortedProducts);
-        break;
-    case '6':
-        sortedProducts.sort((a, b) => b.createdAt - a.createdAt);
-        printProducts(sortedProducts);
-        break;
-    default:
-        console.log(`Invalid choise`)
-}
-
-
-
-
-// create  a function for all the operations
-
-
-
-//! 1. Errors
-//? 1.1 Syntax error: missing parenthesis, semicolons, incorrect variable names
-//if (6 > 5 
-
-//? 1.2 Reference error: accessing a variable that has not been declared or not in the scope
-//console.log(x);
-
-//? 1.3 Type error: performing an operation that does not match with the data type
-// let x = 3;
-// x = x.toUpperCase();
-// console.log(x);
-//? 1.4 Range error 
-//let array = [1, 2, 3];
-
-//console.log(array[5]);
-
-
-//! 2. Exception Handling: try , catch, finally, throw and throws
-
-// console.log("Hello");
-
-// try {
-//     console.log(i);
-// } catch (e) {
-//     console.log(`Inside catch block`)
-//     console.log(e.name);
-//     console.log(e.message);
-// } finally {
-//     console.log(`Bye`);
-//     console.log(`Today is Saturday`);
-//     console.log(`I am living in Patuakhali`);
-// }
-
-
-// const user = { fullname: `Yeash Sarker`, Age: 23 };
-// try {
-//     console.log(user.nationality);
-
-//     const number = 30;
-//     number = 20;
-
-// } catch (error) {
-//     console.error(error)
-// }
-
-// console.log(`good bye`);
-
-
-
-
-// const isEligibleForVote = (Age) => {
-//     if (Age < 18) {
-//         throw new Error("Invalid age for vote eligibility");
-//     }
-//     return `Welcome to Vote`;
-// };
-
-// try {
-//     console.log(isEligibleForVote(15));
-// } catch (error) { 
-//     console.log(error.message);
-// }
-
-
-//! 3. JS  Object vs JSON (JavaScript Object Notation)
-
-// //?JSON.stringify(), JSON.parse()
-// const person10 = {
-//     firstName: `Yeash Sarker`,
-//     aGe: 23
-// };
-
-// const personJSON = JSON.stringify(person10);
-// console.log(personJSON);
-
-// console.log(JSON.parse(personJSON));
-
-//! 4. LocalStorage
-//? localstorage.setItem(key , value), localstorage.getItem(), localstorage.removeItem()
-
-// const loginInfo = {
-//     username: `yeash70`,
-//     password: `123456`,
-//     loginStatus: true,
-// };
-
-// console.log(loginInfo);
-// localStorage.setItem('loginData', JSON.stringify(loginInfo));
-
-
-// const itemFromLocalStorage = JSON.parse(localStorage.getItem('loginData'));
-// console.log(itemFromLocalStorage);
-
-// try {
-//     localStorage.removeItem('loginData');
-// } catch (error) {
-//     console.log(error);
-// }
-
-// console.log('hello goodbye for now');
-
-//!5. asynchronous vs syschronous
-// event loop
-
-console.log('Task 1 ccomplete');
-console.log('Task 2 ccomplete');//syn
-setTimeout(() => {
-    console.log('Task 3 ccomplete');
-}, 2000); //asyn
-console.log('Task 4 ccomplete');
-console.log('Task 5 ccomplete');
-
-
-//! 6. promise- pending, resolve, reject
-//? api calling
-//asynchronous
-//? js global object - window
-//? get request
-// const getAllProject = (id) => {
-//     fetch('cftechlab.hcsarker.me/projects')
-//     .then((res) => res.JSON())
-//     .then((data) => console.log(data))
-//     .catch((err) => console.log(err));
-// }
-
-// const getSingleProject = (id) => {
-//     fetch('cftechlab.hcsarker.me/projects/${id}')
-//     .then((res) => res.JSON())
-//     .then((data) => console.log(data))
-//     .catch((err) => console.log(err));
-// }
-
-// getSingleProject(2); 
-
-// //? post request
-
-// fetch('cftechlab.hcsarker.me/projects', {
-//     method: 'POST',
-//     body: JSON.stringify({
-//         title: 'test products',
-//         price: 122,
-//         description: 'lorem ipsum set', 
-//         category: 'web',
-
-//     }),
-//   })
-//     .then((res) => res.JSON())
-//     .then((json) => console.log(json))
-//     .catch((err) => console.log(err));
-
-
-// //? Put request
-
-// fetch('cftechlab.hcsarker.me/projects/7', {
-//     method: 'PUT',
-//     body: JSON.stringify({
-//         title: 'test products',
-//         price: 122,
-//         description: 'lorem ipsum set', 
-//         category: 'web',
-
-//     }),
-//   })
-//     .then((res) => res.JSON())
-//     .then((json) => console.log(json))
-//     .catch((err) => console.log(err));
-
-// //? delete request
-
-// fetch('cftechlab.hcsarker.me/projects', {
-//     method: 'DELETE',
-//   })
-//     .then((res) => res.JSON())
-//     .then((json) => console.log(json))
-//     .catch((err) => console.log(err));
-
-//? await, asyn
-
-// const getAllProject = async () => {
-//     try {
-//         const res = await fetch('cftechlab.hcsarker.me/projects/4');
-//         if (!res.ok) {
-//             throw new Error('could not fetch data')
-//         }
-//         const data = await res.json();
-//         console.log(data);
-//     } catch (error) {
-//         console.log(error);
-//     }
-// };
-
-// getAllProject();
-
-
-
-//! DOM
-//html document => represent as a tree
-//?create html element, delete, update, read
-// Todo 1-> DOM -> read/select element and modify
-// const titileElement = document.getElementById('title');
-
-// console.log(titileElement);
-// console.log(titileElement.id);
-// console.log(titileElement?.textContent);
-
-// titileElement.textContent = 'setting value from js';
-
-// const button1 = document.getElementsByClassName('btn')[0];
-// console.log(button1);
-
-
-// const button1 = document.getElementsByTagName('button')[0];
-
-// const button1 = document.querySelector('button');
-
-// const button1 = document.querySelector('.btn');
-// button1.textContent = "click1";
-// console.log(button1);
-
-// const buttons = document.querySelectorAll('.btn');
-// console.log(buttons);
-
-const titileElement = document.querySelector('#title');
-titileElement.textContent = "welcome"; 
-// titileElement.style.color = 'white';
-// titileElement.style.backgroundColor = 'green';
-titileElement?.classList.add("title");
-// titileElement?.classList.remove("title")
-
-// Todo 2-> DOM -> create html element 
-
