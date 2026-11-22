@@ -1,103 +1,78 @@
-# ⚡ JavaScript Masterclass: শূন্য থেকে অ্যাডভান্সড (A to Z Interactive Learning Platform)
+# ⚡ JS Masterclass A to Z Pro: সম্পূর্ণ জাভাস্ক্রিপ্ট আর্কিটেকচার ও লাইভ প্লেগ্রাউন্ড
 
-> **বাংলা ও ইংরেজিতে সম্পূর্ণ প্র্যাকটিক্যাল উদাহরণ, লাইভ কোড প্লেগ্রাউন্ড এবং সিলেবাসসহ আধুনিক জাভাস্ক্রিপ্ট শেখার একটি সম্পূর্ণ হ্যান্ডস-অন প্ল্যাটফর্ম।**
-
----
-
-## 🌟 এই প্রজেক্টটির বিশেষ বৈশিষ্ট্যসমূহ (Key Features)
-
-1. **💻 ইন-ব্রাউজার লাইভ কোড প্লেগ্রাউন্ড (In-Browser Interactive Playground):**
-   - কোনো বাহ্যিক সফটওয়্যার বা এক্সটেনশন ছাড়াই সরাসরি ওয়েবপেজ থেকেই যেকোনো জাভাস্ক্রিপ্ট কোড এডিট এবং রান (`Ctrl + Enter`) করা যায়।
-   - ইন-বিল্ট ডার্ক টার্মিনাল কনসোলে তাৎক্ষণিকভাবে আউটপুট দেখা যায়।
-
-2. **📑 সম্পূর্ণ কারিকুলাম (A to Z Structured Syllabus):**
-   - ভেরিয়েবল ও ডাটা টাইপ থেকে শুরু করে **ES6+, Closures, Event Loop, Async/Await, OOP (Classes with Private fields), এবং DOM Manipulation** পর্যন্ত মোট ১৪টি অধ্যায়।
-
-3. **🔍 লাইভ টপিক সার্চ ও ফিল্টারিং:**
-   - সার্চ বারে যেকোনো কিওয়ার্ড (যেমন: `array`, `async`, `loop`, `oop`) টাইপ করলেই মুহূর্তে প্রাসঙ্গিক অধ্যায় ফিল্টার হয়ে যায়।
-
-4. **📊 লার্নিং প্রগ্রেস ট্র্যাকার (Progress Tracker):**
-   - প্রতিটি অধ্যায় সম্পন্ন করার পর **"সম্পন্ন হিসেবে মার্ক করুন"** বাটনে ক্লিক করলে ব্রাউজারের `localStorage`-এ আপনার অগ্রগতির শতকরা হার স্বয়ংক্রিয়ভাবে সেভ থাকে।
-
-5. **🎯 বাস্তব জীবনের হ্যান্ডস-অন প্রজেক্টস ও ইন্টারভিউ প্রবলেমস:**
-   - ই-কমার্স শপিং কার্ট এবং ডিসকাউন্ট ক্যালকুলেশন
-   - ফুল-ফিচার্ড `BankAccount` ও `SavingsAccount` ক্লাস (এনক্যাপসুলেশন ও প্রাইভেট `#balance` সহ)
-   - ডিবাইউন্সিং (Debounce for Search Inputs)
-   - কাস্টম `Array.map` ফাংশন তৈরি
-   - প্যালিনড্রোম চেকার এবং রিয়েল API ফেচিং
+> **শূন্য থেকে সিনিয়র ডেভেলপার পর্যায় পর্যন্ত জাভাস্ক্রিপ্টের প্রতিটি কনসেপ্ট (ES2024, V8 Engine, Closures, Event Loop, OOP, Memory & Performance) প্র্যাকটিক্যাল কোড ও ইন-ব্রাউজার স্যান্ডবক্সসহ শেখার একটি আলটিমেট ওপেন-সোর্স প্ল্যাটফর্ম।**
 
 ---
 
-## 🗺️ সম্পূর্ণ কারিকুলাম ও রোডম্যাপ (Syllabus Overview)
+## 🌟 সৃজনশীল ও স্মার্ট ফিচারসমূহ (Creative & Smart Features)
 
-| অধ্যায় | শিরোনাম (Topic) | লেভেল | মূল ধারণাসমূহ (Key Concepts) |
+1. **🌗 ডার্ক ও লাইট মোড (Theme Switcher):**
+   - ডেভেলপারদের চোখের সুরক্ষার জন্য আধুনিক গ্লাস-মরফিক ডার্ক ও লাইট থিম, যা ব্যবহারকারীর পছন্দ `localStorage`-এ মনে রাখে।
+
+2. **💻 স্প্লিট-স্ক্রিন কোড ল্যাবরেটরি (Split-Screen Code Sandbox):**
+   - বামপাশে আধুনিক কোড এডিটর এবং ডানপাশে তাৎক্ষণিক কনসোল আউটপুট টার্মিনাল।
+   - কিবোর্ড শর্টকাট: `Ctrl + Enter` চেপে কোড রান এবং `Ctrl + K` চেপে তাৎক্ষণিক সার্চ!
+
+3. **🏷️ ফেজ ও ক্যাটাগরি ফিল্টার পিলস (Category Pills):**
+   - পুরো কোর্সটিকে ৫টি ফেজে ভাগ করা হয়েছে: *ফাউন্ডেশন, কোর ডেটা স্ট্রাকচার, আধুনিক ES6+, Async ও OOP, এবং DOM ও পারফরম্যান্স*।
+
+4. **🧠 ইন্টারেক্টিভ নলেজ-চেক কুইজ (Chapter Quizzes):**
+   - প্রতিটি অধ্যায়ের সাথে রয়েছে বাস্তব ইন্টারভিউ ও কনসেপচুয়াল কুইজ। অপশনে ক্লিক করলেই সাথে সাথে সঠিক উত্তরের চমৎকার ব্যাখ্যা পাওয়া যায়।
+
+5. **📊 রিয়েল-টাইম প্রগ্রেস ট্র্যাকার (Progress Tracker):**
+   - ২০টি অধ্যায়ের মধ্যে কয়টি পড়া ও প্র্যাকটিস শেষ হলো তা প্রগ্রেস বার ও পার্সেন্টেজ আকারে দৃশ্যমান হয়।
+
+---
+
+## 🗺️ ২০টি অধ্যায়ের সম্পূর্ণ সূচিপত্র (The 20-Chapter Master Curriculum)
+
+| পর্ব | অধ্যায়ের শিরোনাম | লেভেল | যে বিষয়গুলো কভার করা হয়েছে |
 | :--- | :--- | :---: | :--- |
-| **Part 01** | জাভাস্ক্রিপ্ট বেসিক্স ও ডাটা টাইপস | `Beginner` | `var` vs `let` vs `const`, Primitive & Reference Types, `typeof`, Truthy vs Falsy |
-| **Part 02** | অপারেটর ও কন্ট্রোল ফ্লো | `Beginner` | Strict Equality (`===`), Logical (`&&`, `\|\|`), Nullish (`??`), Optional Chaining (`?.`), If-Else, Switch |
-| **Part 03** | লুপ ও ইটারেশন | `Beginner` | `for`, `while`, `do-while`, `break`, `continue`, `for...of`, `for...in` |
-| **Part 04** | বিল্ট-ইন মেথডস | `Beginner` | Number (`toFixed`), Math (`random` formula), String (`trim`, `slice`, `replace`), Date |
-| **Part 05** | ফাংশন ইন-ডেপথ | `Intermediate`| Function Declarations, Arrow Functions, Rest (`...args`), Callbacks, Higher-Order Functions |
-| **Part 06** | অ্যারে মাস্টারক্লাস | `Intermediate`| `map`, `filter`, `reduce`, `find`, `some`, `every`, `sort`, ই-কমার্স ডেটাসেট ফিল্টারিং |
-| **Part 07** | অবজেক্ট ও আধুনিক ES6+ | `Intermediate`| Destructuring (with defaults), Spread (`...`), `Object.entries`, ES Modules (`import`/`export`) |
-| **Part 08** | এরর হ্যান্ডলিং ও ডিবাগিং | `Intermediate`| `try`, `catch`, `finally`, কাস্টম এরর থ্রো করা (`throw new Error`) |
-| **Part 09** | JSON ও ওয়েব স্টোরেজ | `Intermediate`| `JSON.stringify`, `JSON.parse`, `localStorage`, `sessionStorage` |
-| **Part 10** | অ্যাসিনক্রোনাস জাভাস্ক্রিপ্ট | `Advanced` | Event Loop, Call Stack, Microtasks, Promises, `async/await`, Fetch API |
-| **Part 11** | অবজেক্ট ওরিয়েন্টেড প্রোগ্রামিং (OOP) | `Advanced` | ES6 Classes, Constructor, Private Fields (`#`), Inheritance (`extends`, `super`), Bank App |
-| **Part 12** | অ্যাডভান্সড জাভাস্ক্রিপ্ট কনসেপ্টস | `Advanced` | Lexical Scope, Closures, Hoisting & TDZ, `this` rules, Debouncing & Throttling |
-| **Part 13** | DOM ম্যানিপুলেশন ও ইভেন্টস | `Advanced` | Selectors (`querySelector`), Text/Style/Class updates, `createElement`, Event Listeners |
-| **Part 14** | হ্যান্ডস-অন চ্যালেঞ্জ ও কুইজ | `Practice` | Palindrome Checker, Discount Calculator, Custom Map Function |
+| **Part 01** | JS ইঞ্জিন, মেমোরি ও ভেরিয়েবল | `Beginner` | V8 Engine, Call Stack vs Heap, Execution Context, `var` vs `let` vs `const`, TDZ |
+| **Part 02** | ডাটা টাইপস, Coercion ও Truthy/Falsy | `Beginner` | Primitive vs Reference, Implicit/Explicit Coercion, `NaN`, 6 Falsy Values |
+| **Part 03** | অপারেটরস ও মডার্ন কন্ট্রোল ফ্লো | `Beginner` | Strict Equality (`===`), Short-circuit (`&&`, `\|\|`), Nullish (`??`), Optional Chaining (`?.`) |
+| **Part 04** | লুপ ও ইটারেশনস ডিপ ডাইভ | `Beginner` | `for`, `while`, `do-while`, `for...of`, `for...in`, Labeled Loops, `break`/`continue` |
+| **Part 05** | নাম্বার্স, বিগইন্ট, ম্যাথ ও প্রিসিশন | `Intermediate` | `0.1 + 0.2` সমস্যা ও `Number.EPSILON`, `BigInt`, Math methods, Random Range Formula |
+| **Part 06** | স্ট্রিং ও রেগুলার এক্সপ্রেশন | `Intermediate` | Tagged Templates, Unicode, RegEx patterns (`test`, `match`, `replace`), Validation |
+| **Part 07** | আধুনিক অ্যারে ও ES2023 ইমিউটেবিলিটি | `Intermediate` | `map`, `filter`, `reduce`, `toSorted()`, `toReversed()`, `toSpliced()`, `with()`, `flat` |
+| **Part 08** | অবজেক্ট, Shallow বনাম Deep Copy | `Intermediate` | `Object.freeze`, `Object.seal`, Spread limitations, আধুনিক `structuredClone()` |
+| **Part 09** | আধুনিক কালেকশন: Set, Map, WeakMap | `Intermediate` | Set (Unique Items), Map (Any type key), WeakMap (Garbage collection friendly) |
+| **Part 10** | স্কোপ চেইন, ক্লোজার্স ও কারিয়িং | `Advanced` | Lexical Environment, Closures for private state, Function Currying, IIFE |
+| **Part 11** | The `this` Keyword ও Explicit Binding | `Advanced` | Default/Implicit/Explicit/New binding, `call()`, `apply()`, `bind()`, Arrow `this` |
+| **Part 12** | প্রোটোটাইপ ও প্রোটোটাইপাল চেইন | `Advanced` | `prototype` vs `__proto__`, Prototype Chain, `Object.create()`, Memory sharing |
+| **Part 13** | OOP: ক্লাসেস, এনক্যাপসুলেশন ও পলিমরফিজম | `Advanced` | ES6 Classes, Private fields (`#balance`), Getters/Setters, Inheritance, Bank App |
+| **Part 14** | ইভেন্ট লুপ, মাইক্রোটাস্ক ও ম্যাক্রোটাস্ক | `Advanced` | Event Loop deep dive, Call Stack, Microtask queue vs Macrotask queue priority |
+| **Part 15** | প্রমিজ কম্বিনেটরস ইন প্যারালাল | `Advanced` | `Promise.all()`, `Promise.allSettled()`, `Promise.race()`, `Promise.any()` |
+| **Part 16** | Fetch API, AbortController ও CRUD | `Advanced` | HTTP methods (GET, POST, PUT, DELETE), Canceling requests with `AbortController` |
+| **Part 17** | ইভেন্ট বাবলিং, ক্যাপচারিং ও ডেলিগেশন | `Advanced` | Event Bubbling, Event Capturing, Event Delegation for performance, `stopPropagation` |
+| **Part 18** | অপ্টিমাইজেশন: Debounce বনাম Throttle | `Advanced` | High-frequency event handling (Search input, Window scroll & resize) |
+| **Part 19** | ব্রাউজার এপিআই: IntersectionObserver | `Mastery` | Image Lazy Loading, Infinite Scroll, `localStorage` vs `IndexedDB` |
+| **Part 20** | মেমোরি লিক, সিকিউরিটি ও ক্যাপস্টোন | `Mastery` | Dangling timers/listeners cleanup, XSS prevention, E-commerce Cart Architecture |
 
 ---
 
-## 🚀 কীভাবে রান ও প্র্যাকটিস করবেন (How to Run)
+## 🚀 কীভাবে রান করবেন (How to Run)
 
-### পদ্ধতি ১: ব্রাউজারে ইন্টারেক্টিভ টিউটোরিয়াল সাইট দেখা (সবচেয়ে সহজ ও সেরা)
-1. **VS Code Live Server:**
-   - VS Code-এ `index.html` ফাইলটির উপর রাইট ক্লিক করে **"Open with Live Server"** সিলেক্ট করুন।
-2. **যেকোনো লোকাল স্ট্যাটিক সার্ভার:**
-   ```bash
-   # npx serve ব্যবহার করে:
-   npx serve .
-   ```
-   অথবা Python ব্যবহার করে:
-   ```bash
-   python -m http.server 3000
-   ```
-   এরপর ব্রাউজারে `http://localhost:3000` এ যান। আপনি পূর্ণাঙ্গ টিউটোরিয়াল সাইটটি দেখতে পাবেন এবং সরাসরি কোড এডিট ও রান করতে পারবেন!
+### পদ্ধতি ১: লাইভ ইন্টারেক্টিভ ওয়েবসাইট হিসেবে রান করতে:
+- VS Code-এ `index.html` ফাইলে রাইট-ক্লিক করে **"Open with Live Server"** চাপুন।
+- অথবা যেকোনো লোকাল সার্ভার দিয়ে ওপেন করুন:
+  ```bash
+  npx serve .
+  ```
+  এরপর ব্রাউজারে `http://localhost:3000` এ ঢুকলেই সম্পূর্ণ প্ল্যাটফর্মটি চালু হয়ে যাবে।
 
-### পদ্ধতি ২: টার্মিনাল বা কনসোলে রান করা (Node.js)
-টার্মিনালে সরাসরি পুরো স্ক্রিপ্টটি টেস্ট করতে নিচের কমান্ডটি দিন:
+### পদ্ধতি ২: টার্মিনালে সরাসরি সব কোড টেস্ট করতে:
 ```bash
 node -e "import('./script.js')"
 ```
 
 ---
 
-## 📁 প্রজেক্ট স্ট্রাকচার (Project Structure)
+## 👨‍💻 ক্রিয়েটর ও অর্গানাইজেশন (Author & Company)
 
-```text
-JS_practice/
-│
-├── index.html           # মূল ইন্টারেক্টিভ টিউটোরিয়াল ও প্লেগ্রাউন্ড ওয়েব অ্যাপ
-├── style.css            # আধুনিক রেসপনসিভ ও ডার্ক টার্মিনাল স্টাইলশীট
-├── app.js               # প্লেগ্রাউন্ড এক্সিকিউশন ও ইন্টারঅ্যাকশন ইঞ্জিন
-├── tutorial-data.js     # ১৪টি অধ্যায়ের থিওরি, কোড ও টিপসের ডেটাসেট
-├── script.js            # মাস্টার প্র্যাকটিস স্ক্রিপ্ট (Node.js ও ব্রাউজার সাপোর্টেড)
-├── calculate.js         # ES Module ডেমো (গাণিতিক ফাংশনসমূহ)
-├── person.js            # অবজেক্ট ও মেথড এক্সপোর্ট ডেমো
-├── user.js              # ডিফল্ট এক্সপোর্ট ডেটাসেট
-├── learning.md          # টেক্সট ফরম্যাটের পূর্ণাঙ্গ গাইড ও সিলেবাস
-└── README.md            # এই ডকুমেন্টেশন ফাইল
-```
+* **প্রজেক্ট লিড ও ডেভেলপার:** **Hridoy Chandra Sarker**
+* **গিটহাব প্রোফাইল:** [@hcsarker](https://github.com/hcsarker) (`https://github.com/hcsarker`)
+* **কোম্পানি / অর্গানাইজেশন:** **CF Tech Lab** (`cftechlab`)
+* **লাইসেন্স:** ওপেন সোর্স ও সবার জন্য উন্মুক্ত (MIT License)
 
----
-
-## 💡 নতুনদের জন্য কিছু পরামর্শ (Pro Tips for Learners)
-1. **শুধু পড়বেন না, কোড পরিবর্তন করে রান করুন:** প্রতিটি টপিকে দেওয়া কোডে নতুন ভ্যালু দিয়ে দেখুন আউটপুট কীভাবে পরিবর্তিত হচ্ছে।
-2. **কনসোল এরর থেকে শিখুন:** কোনো এরর আসলে ভয় না পেয়ে টার্মিনালের লাল মেসেজটি পড়ুন। এটি আপনাকে সঠিক কোড লিখতে সাহায্য করবে।
-3. **প্রোগ্রেস ট্র্যাক করুন:** একটি অধ্যায় ভালোভাবে বুঝে শেষ করার পর **"সম্পন্ন হিসেবে মার্ক করুন"** বাটনে ক্লিক করুন।
-
----
-
-👨‍💻 **লেখক ও সংগ্রাহক:** Hridoy Sarker  
-⭐ **লাইসেন্স:** ওপেন সোর্স ও সবার জন্য উন্মুক্ত (MIT License)
+> *“Crafting Modern Web Solutions & Architectural Platforms” — CF Tech Lab*

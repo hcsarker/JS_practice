@@ -1,62 +1,79 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="bn" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS Masterclass • শূন্য থেকে অ্যাডভান্সড জাভাস্ক্রিপ্ট টিউটোরিয়াল ও প্লেগ্রাউন্ড</title>
+    <title>JS Masterclass • শূন্য থেকে অ্যাডভান্সড জাভাস্ক্রিপ্ট আর্কিটেকচার ও প্লেগ্রাউন্ড</title>
     <link rel="icon" href="data:,">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Top Navigation Header -->
+    <!-- Top Navigation Bar -->
     <header class="app-header">
-        <div class="header-brand">
-            <span class="logo-icon">⚡</span>
-            <div>
-                <h1 class="logo-title">JS Masterclass</h1>
-                <p class="logo-tagline">শূন্য থেকে অ্যাডভান্সড হ্যান্ডস-অন টিউটোরিয়াল ও লাইভ প্লেগ্রাউন্ড</p>
+        <div class="header-left">
+            <button type="button" class="btn-menu-toggle" id="btn-menu-toggle" aria-label="Toggle Syllabus">☰</button>
+            <div class="header-brand">
+                <span class="logo-icon">⚡</span>
+                <div>
+                    <h1 class="logo-title">JS Masterclass <span class="version-tag">A to Z Pro</span></h1>
+                    <p class="logo-tagline">হ্যান্ডস-অন আর্কিটেকচার, ES2024 ও লাইভ কোড ল্যাব</p>
+                </div>
             </div>
         </div>
 
         <div class="header-search">
-            <input type="text" id="search-input" placeholder="🔍 অধ্যায় বা টপিক খুঁজুন (যেমন: array, async, loop)..." />
+            <span class="search-icon">🔍</span>
+            <input type="text" id="search-input" placeholder="টপিক বা কনসেপ্ট খুঁজুন... (Ctrl + K)" />
         </div>
 
-        <div class="header-progress">
-            <div class="progress-info">
-                <span id="progress-text">০/১৪ টি অধ্যায় সম্পন্ন (০%)</span>
-            </div>
-            <div class="progress-bar-track">
-                <div class="progress-bar-fill" id="progress-bar-fill"></div>
+        <div class="header-right">
+            <button type="button" id="btn-theme-toggle" class="btn btn-theme">☀️ লাইট মোড</button>
+            <div class="header-progress">
+                <div class="progress-info">
+                    <span id="progress-text">০/২০ টি অধ্যায় সম্পন্ন (০%)</span>
+                </div>
+                <div class="progress-bar-track">
+                    <div class="progress-bar-fill" id="progress-bar-fill"></div>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Main App Container: Sidebar + Content -->
+    <!-- Category Filter Bar (Pills) -->
+    <nav class="category-bar">
+        <div class="category-pills" id="category-pills">
+            <!-- Dynamically populated category pills -->
+        </div>
+    </nav>
+
+    <!-- Main Workspace Layout -->
     <div class="app-body">
-        <!-- Sidebar Navigation -->
+        <!-- Sidebar Drawer Navigation -->
         <aside class="app-sidebar">
             <div class="sidebar-header">
-                <h3>📑 অধ্যায়সমূহ (Syllabus)</h3>
+                <h3>📑 সিলেবাস ও রোডম্যাপ (Syllabus)</h3>
             </div>
             <ul class="sidebar-nav" id="sidebar-nav">
-                <!-- Javascript dynamically renders chapters here -->
+                <!-- Dynamically rendered topics -->
             </ul>
         </aside>
 
         <!-- Main Content Area -->
         <main class="app-content">
             <article class="topic-card">
-                <!-- Topic Meta Header -->
+                <!-- Topic Meta Info -->
                 <div class="topic-header">
-                    <span class="badge" id="chapter-badge">Part 01 • Beginner</span>
+                    <div class="topic-meta">
+                        <span class="badge" id="chapter-badge">Part 01 • Beginner</span>
+                        <span class="read-time" id="chapter-readtime">⏱️ 6 min read</span>
+                    </div>
                     <h2 class="topic-title" id="chapter-title">লোড হচ্ছে...</h2>
                     <p class="topic-summary" id="chapter-summary"></p>
                 </div>
 
-                <!-- Topic Theory Content -->
+                <!-- Theory Explanation -->
                 <div class="topic-content" id="chapter-content">
-                    <!-- Theory rendered here -->
+                    <!-- Theory and diagrams -->
                 </div>
 
                 <!-- Pro Tips Callout -->
@@ -64,53 +81,115 @@
                     <!-- Tips rendered here -->
                 </div>
 
-                <!-- Interactive Playground Section -->
+                <!-- Interactive Quiz Knowledge Check -->
+                <div id="quiz-container">
+                    <!-- Quiz rendered here if available -->
+                </div>
+
+                <!-- Creative Split Playground Section -->
                 <section class="playground-section">
                     <div class="playground-header">
                         <div class="playground-title">
-                            <span>💻 লাইভ কোড প্লেগ্রাউন্ড (Live Editor)</span>
-                            <small>সরাসরি কোড এডিট করে নিচে আউটপুট দেখুন</small>
+                            <span>💻 লাইভ কোড ল্যাবরেটরি (Interactive Sandbox)</span>
+                            <small>সরাসরি কোড এডিট করুন এবং ডানপাশের কনসোলে রিয়েল-টাইম আউটপুট দেখুন</small>
                         </div>
                         <div class="playground-actions">
                             <button type="button" id="btn-copy-code" class="btn btn-secondary">📋 কপি</button>
                             <button type="button" id="btn-reset-code" class="btn btn-secondary">🔄 রিসেট</button>
-                            <button type="button" id="btn-run-code" class="btn btn-primary">▶ কোড রান করুন (Ctrl+Enter)</button>
+                            <button type="button" id="btn-run-code" class="btn btn-run">▶ কোড রান করুন <span class="kbd">Ctrl+Enter</span></button>
                         </div>
                     </div>
 
-                    <!-- Code Editor Textarea -->
-                    <div class="editor-wrapper">
-                        <textarea id="code-editor" spellcheck="false" placeholder="// Write or edit your JS code here..."></textarea>
-                    </div>
-
-                    <!-- Terminal Output Window -->
-                    <div class="terminal-wrapper">
-                        <div class="terminal-bar">
-                            <div class="terminal-dots">
-                                <span class="dot red"></span>
-                                <span class="dot yellow"></span>
-                                <span class="dot green"></span>
-                                <span class="terminal-title">Console Output (আউটপুট কনসোল)</span>
+                    <!-- Dual-Pane Grid: Editor & Terminal -->
+                    <div class="split-playground">
+                        <div class="editor-pane">
+                            <div class="pane-bar">
+                                <span>📄 sandbox.js</span>
+                                <span class="editor-badge">ES2024 Live</span>
                             </div>
-                            <button type="button" id="btn-clear-output" class="btn-clear">ক্লিয়ার</button>
+                            <textarea id="code-editor" spellcheck="false" placeholder="// Write or edit your JS code here..."></textarea>
                         </div>
-                        <div class="terminal-output" id="terminal-output">
-                            <span class="terminal-hint">// "▶ কোড রান করুন" বাটনে ক্লিক করুন...</span>
+
+                        <div class="terminal-pane">
+                            <div class="terminal-bar">
+                                <div class="terminal-dots">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                    <span class="terminal-title">Output Console</span>
+                                </div>
+                                <button type="button" id="btn-clear-output" class="btn-clear">ক্লিয়ার</button>
+                            </div>
+                            <div class="terminal-output" id="terminal-output">
+                                <span class="terminal-hint">// "▶ কোড রান করুন" বাটনে ক্লিক করুন...</span>
+                            </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- Navigation & Completion Footer -->
+                <!-- Topic Navigation Footer -->
                 <footer class="topic-footer">
-                    <button type="button" id="btn-prev-topic" class="btn btn-outline">⬅ পূর্ববর্তী অধ্যায়</button>
+                    <button type="button" id="btn-prev-topic" class="btn btn-outline">⬅ পূর্ববর্তী অধ্যায়</button>
                     <button type="button" id="btn-toggle-complete" class="btn btn-complete">⚪ সম্পন্ন হিসেবে মার্ক করুন</button>
-                    <button type="button" id="btn-next-topic" class="btn btn-outline">পরবর্তী অধ্যায় ➡️</button>
+                    <button type="button" id="btn-next-topic" class="btn btn-outline">পরবর্তী অধ্যায় ➡️</button>
                 </footer>
             </article>
         </main>
     </div>
 
-    <!-- Application Engine -->
+    <!-- Global Creative Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand-section">
+                <div class="footer-brand">
+                    <span class="footer-logo">⚡</span>
+                    <div>
+                        <h3 class="footer-company">CF Tech Lab</h3>
+                        <p class="footer-tagline">Crafting Modern Web Solutions & Educational Platforms</p>
+                    </div>
+                </div>
+                <p class="footer-desc">
+                    জাভাস্ক্রিপ্টকে শূন্য থেকে প্রফেশনাল আর্কিটেকচার পর্যায় পর্যন্ত বাস্তব উদাহরণ, রিয়েল-টাইম কনসোল এবং ইন্টারেক্টিভ ল্যাবের মাধ্যমে শেখার ওপেন-সোর্স প্ল্যাটফর্ম।
+                </p>
+            </div>
+
+            <div class="footer-links-section">
+                <div class="footer-col">
+                    <h4>🔗 গুরুত্বপূর্ণ লিংক</h4>
+                    <ul>
+                        <li><a href="#search-input">টপিক খুঁজুন (Ctrl+K)</a></li>
+                        <li><a href="#code-editor">লাইভ কোড স্যান্ডবক্স</a></li>
+                        <li><a href="https://github.com/hcsarker" target="_blank" rel="noopener noreferrer">গিটহাব রিপোজিটরি</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col author-col">
+                    <h4>👨‍💻 ক্রিয়েটর ও ডেভেলপমেন্ট</h4>
+                    <p class="author-name"><strong>Hridoy Chandra Sarker</strong></p>
+                    <p class="author-role">Founder & Software Engineer • <span>CF Tech Lab</span></p>
+                    <a href="https://github.com/hcsarker" target="_blank" rel="noopener noreferrer" class="github-profile-pill">
+                        <svg class="gh-icon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
+                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                        </svg>
+                        <span>@hcsarker on GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>© 2026 <strong>CF Tech Lab</strong>. Designed & Developed by <strong>Hridoy Chandra Sarker</strong> (<a href="https://github.com/hcsarker" target="_blank" rel="noopener noreferrer" class="author-link">@hcsarker</a>).</p>
+                <div class="footer-badges">
+                    <span class="f-badge">Open Source</span>
+                    <span class="f-badge">MIT License</span>
+                    <span class="f-badge">ES2024 Pro</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Engine Scripts -->
     <script src="script.js" type="module"></script>
     <script src="app.js" type="module"></script>
 </body>

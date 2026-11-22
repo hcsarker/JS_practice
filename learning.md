@@ -1,143 +1,62 @@
-# 🚀 জাভাস্ক্রিপ্ট সম্পূর্ণ হ্যান্ডবুক ও রোডম্যাপ (Basic to Advanced)
+# 🚀 জাভাস্ক্রিপ্ট A to Z সম্পূর্ণ সিলেবাস ও মাস্টার গাইড
 
-স্বাগতম! এই ফাইলটিতে জাভাস্ক্রিপ্ট (JavaScript) শেখার জন্য একটি সম্পূর্ণ, সুসংগঠিত কারিকুলাম ও রোডম্যাপ তৈরি করা হয়েছে। প্রতিটি বিষয়ের প্র্যাকটিক্যাল কোড এবং উদাহরণ [script.js](file:///d:/Programming/JS_practice/script.js) ফাইলে সাজিয়ে দেওয়া হয়েছে।
-
----
-
-## 📑 সূচিপত্র (Syllabus & Learning Flow)
-
-### 🟢 ফেজ ১: জাভাস্ক্রিপ্ট বেসিক্স ও ফান্ডামেন্টালস
-1. **ভিত্তি ও সিনট্যাক্স:**
-   - কমেন্ট (`//`, `/* */`), স্টেটমেন্ট, কেস-সেনসিটিভিটি
-   - ইনপুট/আউটপুট (`console.log`, `alert`, `prompt`)
-   - এস্কেপ ক্যারেক্টার (`\n`, `\t`)
-2. **ভেরিয়েবল ও স্কোপ:**
-   - `var` vs `let` vs `const` এর মধ্যে গভীর পার্থক্য
-3. **ডাটা টাইপসমূহ (Data Types):**
-   - **Primitive:** `string`, `number`, `boolean`, `undefined`, `null`, `symbol`, `bigint`
-   - **Reference / Non-Primitive:** `object`, `array`, `function`
-   - `typeof` অপারেটর
-4. **Truthy বনাম Falsy ভ্যালু:**
-   - ৬টি ফলসি মান: `false`, `0`, `""`, `null`, `undefined`, `NaN`
+স্বাগতম! এই কারিকুলামটি এমনভাবে তৈরি করা হয়েছে যেন একজন শিক্ষার্থী বা ডেভেলপার শূন্য থেকে শুরু করে জাভাস্ক্রিপ্ট ইঞ্জিন আর্কিটেকচার, মেমোরি মডেল, ES6 থেকে ES2024, ডিপ ফাংশনাল প্রোগ্রামিং, অ্যাসিনক্রোনাস আর্কিটেকচার এবং পারফরম্যান্স অপ্টিমাইজেশন পর্যন্ত সমস্ত কিছু হ্যান্ডস-অন শিখতে পারে।
 
 ---
 
-### 🟡 ফেজ ২: অপারেটর এবং কন্ট্রোল ফ্লো
-1. **অপারেটরস:**
-   - **অ্যারিথমেটিক:** `+`, `-`, `*`, `/`, `%`, `**` (Exponentiation)
-   - **অ্যাসাইনমেন্ট:** `=`, `+=`, `-=`, `*=`, `/=`, `%=`
-   - **কম্প্যারিজন:** `==` vs `===` (Strict Equality), `!=`, `!==`, `>`, `<`, `>=`, `<=`
-   - **লজিক্যাল:** `&&` (AND), `||` (OR), `!` (NOT), শর্ট-সার্কিট ইভালুয়েশন
-   - **ইউনারি ও টার্নারি:** `++`, `--`, `condition ? trueVal : falseVal`
-   - **আধুনিক অপারেটর:** `??` (Nullish Coalescing), `?.` (Optional Chaining)
-2. **কন্ডিশনাল কন্ট্রোল স্টেটমেন্ট:**
-   - `if`, `else if`, `else`
-   - `switch` স্টেটমেন্ট এবং `break`, `default`
-3. **লুপ ও ইটারেশন:**
-   - `for` লুপ
-   - `while` লুপ ও `do...while` লুপ
-   - `break` এবং `continue`
-   - `for...of` (অ্যারে/স্ট্রিং এর জন্য)
-   - `for...in` (অবজেক্টের প্রোপার্টির জন্য)
+## 📑 ২০টি অধ্যায়ের পূর্ণাঙ্গ কারিকুলাম (The 20-Chapter Master Syllabus)
+
+### 🟢 ফেজ ১: ফাউন্ডেশন ও ইঞ্জিন মেকানিক্স (Foundations)
+1. **Part 01:** জাভাস্ক্রিপ্ট ইঞ্জিন আর্কিটেকচার (V8 Engine, Memory Heap, Call Stack, Execution Context, `var` vs `let` vs `const`, Temporal Dead Zone)
+2. **Part 02:** ডাটা টাইপস, Type Coercion ও Truthy/Falsy (Primitive vs Reference, IEEE 754 Floating Point issue, `NaN` ও `Number.isNaN`, 6 Falsy Values)
+3. **Part 03:** অপারেটরস ও মডার্ন কন্ট্রোল ফ্লো (Strict Equality `===`, Short-circuit `&&` / `||`, Nullish Coalescing `??`, Optional Chaining `?.`, Switch)
+4. **Part 04:** লুপ ও ইটারেশনস (Deep Loops: `for`, `while`, `do-while`, `for...of`, `for...in`, Labeled Loops, `break`/`continue`)
 
 ---
 
-### 🔵 ফেজ ৩: বিল্ট-ইন মেথড ও ফাংশন ইন-ডেপথ
-1. **বিল্ট-ইন অবজেক্ট ও মেথড:**
-   - **Number:** `toFixed()`, `toPrecision()`, `parseInt()`, `parseFloat()`, `isNaN()`
-   - **Math:** `round()`, `floor()`, `ceil()`, `abs()`, `max()`, `min()`, `random()`
-   - **String:** `length`, `toUpperCase()`, `toLowerCase()`, `trim()`, `slice()`, `split()`, `includes()`, `replace()`
-   - **Date:** `new Date()`, `getFullYear()`, `getMonth()`, `toLocaleTimeString()`
-2. **ফাংশন মাস্টারক্লাস:**
-   - Function Declaration vs Function Expression
-   - Arrow Function (অ্যারো ফাংশন ও সিনট্যাক্স)
-   - ডিফল্ট প্যারামিটার (Default Parameters)
-   - রেস্ট প্যারামিটার (`...args`)
-   - Callback Function এবং Higher-Order Function (HOF)
+### 🟡 ফেজ ২: কোর ডেটা স্ট্রাকচার ও বিল্ট-ইনস (Core Data Structures)
+5. **Part 05:** নাম্বার্স, বিগইন্ট, ম্যাথ ও প্রিসিশন হ্যান্ডলিং (`0.1 + 0.2 === 0.3` সমস্যা ও `Number.EPSILON`, `BigInt`, Math methods, Random range formula)
+6. **Part 06:** স্ট্রিং ও রেগুলার এক্সপ্রেশন (Tagged Templates, Unicode/UTF-16, RegEx patterns, `matchAll`, input validation)
+7. **Part 07:** আধুনিক অ্যারে মেথডস ও ES2023 ইমিউটেবিলিটি (`map`, `filter`, `reduce`, `flat`, `flatMap`, `toSorted()`, `toReversed()`, `toSpliced()`, `with()`)
+8. **Part 08:** অবজেক্টস, Shallow Copy বনাম Deep Copy (`Object.freeze`, `Object.seal`, Spread limitations, `structuredClone()`)
+9. **Part 09:** আধুনিক ডেটা স্ট্রাকচার: `Set`, `Map`, `WeakSet`, `WeakMap` (Unique collections, Garbage Collection friendly memory maps)
 
 ---
 
-### 🟣 ফেজ ৪: আধুনিক অ্যারে ও অবজেক্ট (ES6+)
-1. **অ্যারে মেথডস:**
-   - Mutating: `push()`, `pop()`, `shift()`, `unshift()`, `splice()`, `reverse()`
-   - Non-mutating: `slice()`, `concat()`, `join()`, `includes()`
-   - **ফাংশনাল হাইয়ার-অর্ডার মেথড:**
-     - `map()` - ডাটা ট্রান্সফর্মেশনের জন্য
-     - `filter()` - নির্দিষ্ট শর্তে ডাটা ছাঁকার জন্য
-     - `reduce()` - সর্বমোট যোগফল বা এগ্রিগেশনের জন্য
-     - `find()` ও `findIndex()` - নির্দিষ্ট উপাদান খোঁজার জন্য
-     - `some()` ও `every()` - শর্ত যাচাইয়ের জন্য
-     - `sort()` - অ্যালফাবেটিকাল, সংখ্যা ও তারিখ সর্ট করার সঠিক নিয়ম
-2. **অবজেক্ট ও আধুনিক ফিচার্স:**
-   - অবজেক্ট মেথড: `Object.keys()`, `Object.values()`, `Object.entries()`
-   - Destructuring (Object ও Array ডিস্ট্রাকচারিং)
-   - Spread Operator (`...`) দিয়ে ক্লোনিং ও মার্জিং
-   - Template Literals (ব্যাকটিক্স ও স্ট্রিং ইন্টারপোলেশন `${}`)
-   - ES Modules (`import` ও `export`)
+### 🔵 ফেজ ৩: অ্যাডভান্সড ফাংশনস ও আধুনিক ES6+ (Advanced Functions)
+10. **Part 10:** ফাংশন আর্কিটেকচার, স্কোপ চেইন ও ক্লোজার্স (Lexical Environment, Closures for private state, Currying, IIFE, Pure Functions)
+11. **Part 11:** The `this` Keyword ও Explicit Binding (Default, Implicit, Explicit, New binding, Arrow function lexical `this`, `call()`, `apply()`, `bind()`)
+12. **Part 12:** প্রোটোটাইপ ও প্রোটোটাইপাল ইনহেরিট্যান্স (`prototype` vs `__proto__`, Prototype Chain, `Object.create()`, মেমোরি শেয়ারিং)
 
 ---
 
-### 🔴 ফেজ ৫: এরর হ্যান্ডলিং ও ব্রাউজার স্টোরেজ
-1. **Error Handling:**
-   - এররের ধরন: `SyntaxError`, `ReferenceError`, `TypeError`, `RangeError`
-   - `try`, `catch`, `finally` ব্লক
-   - কাস্টম এরর থ্রো করা (`throw new Error(...)`)
-2. **JSON ও স্টোরেজ:**
-   - `JSON.stringify()` (অবজেক্ট থেকে স্ট্রিং)
-   - `JSON.parse()` (স্ট্রিং থেকে অবজেক্ট)
-   - `localStorage` (`setItem`, `getItem`, `removeItem`, `clear`)
+### 🟣 ফেজ ৪: অ্যাসিনক্রোনাস ও অবজেক্ট ওরিয়েন্টেড প্রোগ্রামিং (Async & OOP)
+13. **Part 13:** অবজেক্ট ওরিয়েন্টেড প্রোগ্রামিং (ES6 Classes, Encapsulation with `#privateFields`, Getters/Setters, Inheritance `extends`/`super`, Polymorphism, Full Bank App)
+14. **Part 14:** ইভেন্ট লুপ, মাইক্রোটাস্ক বনাম ম্যাক্রোটাস্ক কিউ (Call Stack, Event Loop, Microtask Queue vs Macrotask Queue execution order)
+15. **Part 15:** প্রমিজ কম্বিনেটরস (`Promise.all()`, `Promise.allSettled()`, `Promise.race()`, `Promise.any()` parallel handling)
+16. **Part 16:** Fetch API, AbortController ও রিয়েল CRUD (Network calls, headers, canceling requests with `AbortController`, error handling traps)
 
 ---
 
-### 🟠 ফেজ ৬: অ্যাসিনক্রোনাস জাভাস্ক্রিপ্ট ও এপিআই
-1. **অ্যাসিনক্রোনাস আর্কিটেকচার:**
-   - Single Threaded মডেল
-   - Event Loop, Call Stack, Task Queue, Microtask Queue
-   - `setTimeout` এবং `setInterval`
-2. **Promises ও Async/Await:**
-   - Promise এর ৩টি স্টেট: Pending, Fulfilled (`resolve`), Rejected (`reject`)
-   - `.then()`, `.catch()`, `.finally()`
-   - `async / await` এর মাধ্যমে ক্লিন ও রিডেবল অ্যাসিনক্রোনাস কোড
-3. **Fetch API:**
-   - রিয়েল সার্ভার থেকে ডেটা রিড ও প্রসেস করার নিয়ম (GET, POST রিকোয়েস্ট)
-
----
-
-### 🟤 ফেজ ৭: অবজেক্ট ওরিয়েন্টেড প্রোগ্রামিং (OOP)
-1. **ES6 Classes:**
-   - `class`, `constructor`, মেথডস
-   - Encapsulation এবং প্রাইভেট ফিল্ড (`#privateProperty`)
-   - Getters এবং Setters (`get`, `set`)
-   - Inheritance (`extends`, `super`)
-   - **বাস্তব প্রজেক্ট:** ফুল ফিচার্ড `BankAccount` ও `SavingsAccount` ক্লাস
-
----
-
-### ⚪ ফেজ ৮: অ্যাডভান্সড জাভাস্ক্রিপ্ট কনসেপ্টস
-1. **Scope ও Hoisting:**
-   - Global, Function, Block Scope
-   - Temporal Dead Zone (TDZ)
-2. **Closures (ক্লোজার):**
-   - বাইরের ফাংশনের ভেরিয়েবল মনে রাখার ক্ষমতা এবং প্রাইভেট স্টেট তৈরি
-3. **The `this` Keyword:**
-   - বিভিন্ন পরিস্থিতিতে `this` এর আচরণ
-4. **Debouncing ও Throttling:**
-   - পারফরম্যান্স অপ্টিমাইজেশন ও সার্চ ইনপুট হ্যান্ডলিং
-
----
-
-### 🎯 ফেজ ৯: DOM ম্যানিপুলেশন ও ইভেন্টস
-1. এলিমেন্ট সিলেক্ট: `querySelector`, `querySelectorAll`, `getElementById`
-2. কন্টেন্ট ও স্টাইল পরিবর্তন: `textContent`, `classList.add()`, `classList.remove()`
-3. নতুন এলিমেন্ট তৈরি: `document.createElement()`, `appendChild()`
-4. ইভেন্ট লিসেনার: `addEventListener('click')`, `addEventListener('input')`
+### 🔴 ফেজ ৫: ওয়েব এপিআই, ব্রাউজার ও পারফরম্যান্স (Web & Browser Mastery)
+17. **Part 17:** DOM ইভেন্টস, বাবলিং, ক্যাপচারিং ও ডেলিগেশন (Event Bubbling, Event Capturing, Event Delegation, `stopPropagation`, `preventDefault`)
+18. **Part 18:** পারফরম্যান্স অপ্টিমাইজেশন: Debouncing বনাম Throttling (High frequency event handling for search inputs, scroll, resize)
+19. **Part 19:** মডার্ন ব্রাউজার এপিআই: IntersectionObserver ও স্টোরেজ (Lazy loading, Infinite scroll, `localStorage` vs `sessionStorage` vs `IndexedDB`)
+20. **Part 20:** মেমোরি লিক প্রিভেনশন, সিকিউরিটি ও ফাইনাল ক্যাপস্টোন চ্যালেঞ্জ (Dangling timers, uncleaned listeners, XSS protection, E-commerce Cart Architecture)
 
 ---
 
 ## 🛠️ ফাইল ও ফোল্ডার পরিচিতি
-- [script.js](file:///d:/Programming/JS_practice/script.js) — মূল কোড ও সমস্ত প্র্যাকটিক্যাল উদাহরণ।
-- [index.html](file:///d:/Programming/JS_practice/index.html) — ব্রাউজারে রান করে DOM ও ইন্টারঅ্যাকশন দেখার পেজ।
-- [style.css](file:///d:/Programming/JS_practice/style.css) — ডেমো পেজের আধুনিক ডিজাইন।
-- [calculate.js](file:///d:/Programming/JS_practice/calculate.js) — মডিউল এক্সপোর্ট/ইম্পোর্ট ডেমো।
-- [person.js](file:///d:/Programming/JS_practice/person.js) — অবজেক্ট এক্সপোর্ট ডেমো।
-- [user.js](file:///d:/Programming/JS_practice/user.js) — ডিফল্ট এক্সপোর্ট ডেমো।
+- [index.html](file:///d:/Programming/JS_practice/index.html) — ক্রিয়েটিভ ও রেসপনসিভ স্প্লিট-স্ক্রিন টিউটোরিয়াল ও লাইভ প্লেগ্রাউন্ড ওয়েব অ্যাপ।
+- [style.css](file:///d:/Programming/JS_practice/style.css) — ডার্ক/লাইট মোড সাপোর্টেড আধুনিক ডেভেলপার থিম।
+- [app.js](file:///d:/Programming/JS_practice/app.js) — প্লেগ্রাউন্ড এক্সিকিউশন ইঞ্জিন, কুইজ হ্যান্ডলার, ক্যাটাগরি ফিল্টার ও থিম সুইচ।
+- [tutorial-data.js](file:///d:/Programming/JS_practice/tutorial-data.js) — ২০টি অধ্যায়ের সম্পূর্ণ ডেটাসেট (থিওরি, কোড, টিপস, কুইজ)।
+- [script.js](file:///d:/Programming/JS_practice/script.js) — টার্মিনাল ও নোড সাপোর্টেড মাস্টার স্ক্রিপ্ট।
+- [README.md](file:///d:/Programming/JS_practice/README.md) — প্রজেক্টের সামগ্রিক পরিচিতি ও ব্যবহার নির্দেশিকা।
+
+---
+
+### 👨‍💻 ক্রিয়েটর ও অর্গানাইজেশন
+- **ডেভেলপার:** **Hridoy Chandra Sarker** ([@hcsarker](https://github.com/hcsarker))
+- **কোম্পানি:** **CF Tech Lab** (`cftechlab`)
+- **মিশন:** আধুনিক ওয়েব আর্কিটেকচার ও উন্নত প্রোগ্রামিং শিক্ষার উন্মুক্ত প্ল্যাটফর্ম তৈরি করা।
